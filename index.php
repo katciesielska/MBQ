@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBQ Michał Blandzi</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/font-awesome.css"> <!-- FA4 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"> <!-- FA6 -->
+    <link rel="stylesheet" href="css/camera.css">
+    <link rel="stylesheet" href="css/prettyPhoto.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,700|Open+Sans:700" rel="stylesheet">
+
+    <script src="js/jquery-1.8.3.min.js"></script>
+
+    <style>
+        /* small per-page overrides to ensure header spacing works with fixed header */
+        html, body { height: 100%; }
+        body {
+            padding-top: 70px; /* reserve space for fixed top bar */
+            margin: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-family: Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        /* minimal safety: make sure menu height respected */
+        #menuF { min-height: 70px; }
+
+        /* make service boxes look clickable and keyboard-accessible */
+        .service-box { cursor: pointer; outline: none; }
+        .service-box:focus { box-shadow: 0 0 0 3px rgba(0,123,255,0.25); }
+    </style>
+</head>
+
+<body>
+<!-- CONTACT BUBBLE (clean, fixed, delayed) -->
+<div id="contact-bubble" data-key="bubble.text">
+    Zainteresowana/y? Skontaktuj się z nami!
+</div>
+
+<script>
+/* CONTACT BUBBLE – delayed show + click scroll */
+(function() {
+
+    function showBubbleDelayed() {
+        const bubble = document.getElementById('contact-bubble');
+        if (!bubble) return;
+
+        // hidden initially
+        bubble.style.display = 'none';
+        bubble.style.opacity = '0';
+        bubble.style.visibility = 'hidden';
+
+        // show after 5s
+        setTimeout(() => {
+            bubble.style.display = 'block';
+            bubble.style.visibility = 'visible';
+            bubble.style.transition = 'opacity .5s ease';
+            requestAnimationFrame(() => bubble.style.opacity = '1');
+        }, 5000);
+    }
+
+    // ensure DOM
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', showBubbleDelayed);
+    } else {
+        showBubbleDelayed();
+    }
+
+    /* CLICK → SCROLL TO CONTACT */
+    document.addEventListener('click', function(e) {
+        const bubble = document.getElementById('contact-bubble');
+        if (!bubble) return;
+
+        if (e.target === bubble || bubble.contains(e.target)) {
+
+            const contact = document.getElementById('contact');
+            const header = document.getElementById('menuF');
+            if (!contact) return;
+
+            const headerH = header ? header.offsetHeight : 70;
+
+            const y = contact.getBoundingClientRect().top
+                    + window.pageYOffset
+                    - headerH
+                    - 8;
+
+            window.scrollTo({
+                top: y,
+                behavior: 'smooth'
+            });
+        }
+    });
+
+})();
+</script>
+
+
+
+<!-- HEADER (fixed black bar is inside #menuF) -->
+<div id="home">
+    <div class="headerLine">
+
+        <div id="menuF" class="default" role="navigation" aria-label="Główne menu">
+            <div class="container">
+                <div class="row" style="align-items:center;">
+
+                    <!-- LOGO (left) -->
+                    <div class="logo col-md-4 col-sm-6 col-xs-6" style="display:flex;align-items:center;">
+                        <a href="#home" aria-label="MBQ home">
+                            <img id="logo-main" src="images/logo.png" alt="MBQ" style="height:54px; max-height:80px;">
+                        </a>
+                    </div>
+
+                    <!-- RIGHT CONTROLS: language + hamburger -->
+                    <div class="col-md-8 col-sm-6 col-xs-6" style="display:flex; justify-content:flex-end; align-items:center; gap:10px;">
+
+                        <!-- language switch on top bar -->
+                        <button id="lang-switch" aria-label="Zmień język" style="font-weight:700;">EN</button>
+
+                        <!-- hamburger to open right side menu -->
+                        <button id="hamburger" aria-label="Otwórz menu" class="hamburger-btn" type="button">
+                            <span class="hamburger-box"><span class="hamburger-inner"></span></span>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT-SLIDE MENU (hidden by default) -->
+        <nav id="sideMenu" aria-hidden="true" role="menu">
+            <button id="sideClose" aria-label="Zamknij menu">&times;</button>
+            <ul>
+                <li><a href="#home" data-key="nav.home">Home</a></li>
+                <li><a href="#about" data-key="nav.services">Usługi</a></li>
+                <li><a href="#project" data-key="nav.projects">Realizacje</a></li>
+                <li><a href="#aboutus" data-key="nav.about">O nas</a></li>
+                <li><a href="#contact" data-key="nav.contact">Kontakt</a></li>
+            </ul>
+        </nav>
+        <div id="sideMenuOverlay" aria-hidden="true"></div>
+
+        <!-- SLIDER (bez zmian) -->
+        <div class="container-fluid" style="padding:0;">
+            <div class="camera_wrap camera_white_skin" id="camera_wrap_1">
+
+                <div data-src="images/slides/blank.gif">
+                    <div class="camera_caption fadeFromBottom">
+                        <h2 data-key="slide.one">Budowa?</h2>
+                    </div>
+                </div>
+
+                <div data-src="images/slides/blank.gif">
+                    <div class="camera_caption fadeFromBottom">
+                        <h2 data-key="slide.two">Remont?</h2>
+                    </div>
+                </div>
+
+                <div data-src="images/slides/blank.gif">
+                    <div class="camera_caption fadeFromBottom">
+                        <h2 data-key="slide.three">Nie ma problemu.</h2>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- USŁUGI -->
+<div id="about" class="section" style="padding:60px 0;">
+    <div class="container text-center">
+        <h3 data-key="services.title">Zakres usług MBQ</h3>
+        <p data-key="services.desc">Co możemy dla Ciebie wykonać — kompleksowo...</p>
+    </div>
+
+    <div class="container" style="margin-top:30px;">
+        <!-- responsive grid: 3 cols desktop, 2 tablet, 1 mobile -->
+        <div class="services-grid">
+
+            <!-- each service-box now has data-folder matching the folder name under images/realizacje -->
+            <div class="service-box" role="button" tabindex="0" data-folder="domy_szkieletowe" aria-label="Domy szkieletowe">
+                <i class="fa-solid fa-house"></i>
+                <h4 data-key="svc.houses">Domy szkieletowe</h4>
+            </div>
+
+            <div class="service-box" role="button" tabindex="0" data-folder="elewacje" aria-label="Elewacje">
+                <i class="fa-solid fa-building"></i>
+                <h4 data-key="svc.elev">Elewacje</h4>
+            </div>
+
+            <div class="service-box" role="button" tabindex="0" data-folder="tarasy" aria-label="Tarasy">
+                <i class="fa-solid fa-border-style"></i>
+                <h4 data-key="svc.terraces">Tarasy</h4>
+            </div>
+
+            <div class="service-box" role="button" tabindex="0" data-folder="sauny" aria-label="Sauny">
+                <i class="fa-solid fa-fire"></i>
+                <h4 data-key="svc.saunas">Sauny</h4>
+            </div>
+
+            <div class="service-box" role="button" tabindex="0" data-folder="ogrodzenie" aria-label="Ogrodzenia">
+                <i class="fa-solid fa-bars"></i>
+                <h4 data-key="svc.fences">Ogrodzenia</h4>
+            </div>
+
+            <div class="service-box" role="button" tabindex="0" data-folder="projekty_3d" aria-label="Projekty 3D">
+                <i class="fa-solid fa-cubes"></i>
+                <h4 data-key="svc.3d">Projekty 3D</h4>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- REALIZACJE -->
+<?php include 'realizacje.php'; ?>
+
+<!-- O NAS -->
+<div id="aboutus" class="section" style="padding:60px 0;">
+    <div class="container text-center">
+        <h3 data-key="aboutus.title">MBQ jest firmą, której szukałeś!</h3>
+        <h4 data-key="aboutus.l1">Przekonaj się, że budowa, czy remont, nie muszą być problemem.</h4>
+        <h4 data-key="aboutus.l2">Razem z nami zmień swoje otoczenie.</h4>
+        <h4 data-key="aboutus.l3">Znamy się na tym i zajmiemy się wszystkim. Sprawnie i bezbłędnie : )</h4>
+    </div>
+
+    <div class="container" style="margin-top:30px;">
+        <div class="row">
+            <div class="col-md-12 hr1"><hr/></div>
+
+            <div class="col-md-12 wwa" style="margin-top:15px;">
+                <h3><i class="fa fa-phone"></i> +48 515 091 300</h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- KONTAKT -->
+<div id="contact" class="section" style="padding:60px 0;">
+    <div class="container text-center">
+        <h3 data-key="contact.title">Skontaktuj się z nami!</h3>
+        <h4 data-key="contact.subtitle">Czekamy na Twój telefon lub wiadomość.</h4>
+
+        <form id="contactForm" method="post" action="contact.php" style="max-width:820px;margin:0 auto;">
+            <input type="hidden" name="lang" id="contact-lang" value="pl">
+
+            <div class="form-group">
+                <input type="text" name="name" class="form-control" data-key="form.name"
+                       placeholder="Imię i nazwisko" required>
+            </div>
+
+            <div class="form-group">
+                <input type="email" name="email" class="form-control" data-key="form.email"
+                       placeholder="Email" required>
+            </div>
+
+            <div class="form-group">
+                <textarea name="message" class="form-control" data-key="form.message"
+                          placeholder="Wiadomość" rows="4" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" data-key="contact.send">Wyślij</button>
+        </form>
+    </div>
+</div>
+
+<footer>
+    <p data-key="footer.copy">&copy; 2025 MBQ Michał Blandzi</p>
+</footer>
+
+<!-- JS -->
+<script src="js/jquery.mobile.customized.min.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script src="js/camera.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.prettyPhoto.js"></script>
+
+<script>
+/* ---------- SLIDER ---------- */
+jQuery(function () {
+    jQuery('#camera_wrap_1').camera({
+        height: '490px',
+        loader: false,
+        pagination: true,
+        navigation: false,
+        playPause: false,
+        time: 3000,
+        transPeriod: 800
+    });
+});
+
+/* ---------- SIDE MENU (RIGHT PANEL) ---------- */
+(function() {
+    const hamburger = document.getElementById('hamburger');
+    const side = document.getElementById('sideMenu');
+    const overlay = document.getElementById('sideMenuOverlay');
+    const sideClose = document.getElementById('sideClose');
+
+    function openSide() {
+        side.classList.add('open');
+        overlay.classList.add('visible');
+        side.setAttribute('aria-hidden','false');
+        overlay.setAttribute('aria-hidden','false');
+    }
+    function closeSide() {
+        side.classList.remove('open');
+        overlay.classList.remove('visible');
+        side.setAttribute('aria-hidden','true');
+        overlay.setAttribute('aria-hidden','true');
+    }
+
+    hamburger.addEventListener('click', function(e){
+        e.stopPropagation();
+        openSide();
+    });
+
+    sideClose.addEventListener('click', closeSide);
+    overlay.addEventListener('click', closeSide);
+
+    // Close when clicking a menu link + smooth scroll behavior preserved
+    side.querySelectorAll('a[href^="#"]').forEach(a=>{
+        a.addEventListener('click', function(e){
+            closeSide();
+            // smooth scroll same as other anchors
+            const href = this.getAttribute('href');
+            if(!href || href === '#') return;
+            const targetId = href.substring(1);
+            const target = document.getElementById(targetId) || document.querySelector('[name="'+targetId+'"]');
+            if (target) {
+                e.preventDefault();
+                const headerH = document.getElementById('menuF').offsetHeight || 70;
+                const top = target.getBoundingClientRect().top + window.pageYOffset - headerH - 8;
+                window.scrollTo({ top: top, behavior: 'smooth' });
+            }
+        });
+    });
+
+    // ESC closes
+    document.addEventListener('keydown', function(e){
+        if(e.key === 'Escape') closeSide();
+    });
+})();
+
+/* ---------- SCROLL OFFSET for the rest of anchors ---------- */
+(function () {
+    const headerHeight = () =>
+        document.getElementById('menuF').offsetHeight || 70;
+
+    function handleAnchorClick(e) {
+        const href = this.getAttribute('href');
+        if (!href || href === '#') return;
+
+        const targetId = href.substring(1);
+        const target =
+            document.getElementById(targetId) ||
+            document.querySelector('[name="' + targetId + '"]');
+
+        if (target) {
+            e.preventDefault();
+            const top =
+                target.getBoundingClientRect().top +
+                window.pageYOffset -
+                headerHeight() -
+                8;
+
+            window.scrollTo({
+                top: top,
+                behavior: 'smooth'
+            });
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', handleAnchorClick));
+    });
+})();
+
+/* ---------- SERVICES → trigger project filter ---------- */
+(function(){
+    function emitProjectFilter(folder) {
+        // dispatch event so realizacje.php script can listen (works even if realizacje loaded later)
+        document.dispatchEvent(new CustomEvent('projectFilterRequested', { detail: { folder } }));
+        // also set URL param (optional) so it's shareable/bookmarkable
+        try {
+            const url = new URL(window.location);
+            url.searchParams.set('kategoria', folder);
+            window.history.replaceState({}, '', url);
+        } catch(e) {}
+        // scroll to projects section
+        const headerH = document.getElementById('menuF') ? document.getElementById('menuF').offsetHeight : 70;
+        const target = document.getElementById('project');
+        if (target) {
+            const top = target.getBoundingClientRect().top + window.pageYOffset - headerH - 8;
+            window.scrollTo({ top: top, behavior: 'smooth' });
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function(){
+        document.querySelectorAll('.service-box[data-folder]').forEach(el=>{
+            el.addEventListener('click', function(){ emitProjectFilter(el.getAttribute('data-folder')); });
+            // keyboard: Enter or Space
+            el.addEventListener('keydown', function(e){
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    emitProjectFilter(el.getAttribute('data-folder'));
+                }
+            });
+        });
+    });
+})();
+</script>
+
+<!-- ---------- TRANSLATIONS (unchanged) ---------- -->
+<script>
+const translations = {
+    "pl": {
+        "nav.home": "Home",
+        "nav.services": "Usługi",
+        "nav.projects": "Realizacje",
+        "nav.about": "O nas",
+        "nav.contact": "Kontakt",
+
+        "slide.one": "Budowa?",
+        "slide.two": "Remont?",
+        "slide.three": "Nie ma problemu.",
+
+        "services.title": "Zakres usług MBQ",
+        "services.desc": "Co możemy dla Ciebie wykonać — kompleksowo...",
+
+        "svc.houses": "Domy szkieletowe",
+        "svc.elev": "Elewacje",
+        "svc.terraces": "Tarasy",
+        "svc.saunas": "Sauny",
+        "svc.fences": "Ogrodzenia",
+        "svc.3d": "Projekty 3D",
+
+        "projects.title": "Nasze realizacje",
+        "projects.subtitle": "Wybierz kategorię, aby filtrować",
+        "projects.more": "Pokaż więcej",
+
+        "filter.all": "Wszystkie",
+        "filter.domy_szkieletowe": "Domy szkieletowe",
+        "filter.elewacje": "Elewacje",
+        "filter.tarasy": "Tarasy",
+        "filter.sauny": "Sauny",
+        "filter.ogrodzenie": "Ogrodzenia",
+        "filter.projekty_3d": "Projekty 3D",
+
+        "aboutus.title": "MBQ jest firmą, której szukałeś!",
+        "aboutus.l1": "Przekonaj się, że budowa, czy remont, nie muszą być problemem.",
+        "aboutus.l2": "Razem z nami zmień swoje otoczenie.",
+        "aboutus.l3": "Znamy się na tym i zajmiemy się wszystkim. Sprawnie i bezbłędnie : )",
+
+        "contact.title": "Skontaktuj się z nami!",
+        "contact.subtitle": "Czekamy na Twój telefon lub wiadomość.",
+
+        "form.name": "Imię i nazwisko",
+        "form.email": "Email",
+        "form.message": "Wiadomość",
+
+        "contact.send": "Wyślij",
+
+        "bubble.text": "Zainteresowana/y? Skontaktuj się z nami!",
+        "footer.copy": "© 2025 MBQ Michał Blandzi"
+    },
+
+    "en": {
+        "nav.home": "Home",
+        "nav.services": "Services",
+        "nav.projects": "Projects",
+        "nav.about": "About us",
+        "nav.contact": "Contact",
+
+        "slide.one": "Construction?",
+        "slide.two": "Renovation?",
+        "slide.three": "No problem.",
+
+        "services.title": "Range of MBQ services",
+        "services.desc": "What we can do for you — fully, professionally and stress-free.",
+
+        "svc.houses": "Timber houses",
+        "svc.elev": "Elevations",
+        "svc.terraces": "Terraces",
+        "svc.saunas": "Saunas",
+        "svc.fences": "Fences",
+        "svc.3d": "3D Projects",
+
+        "projects.title": "Our projects",
+        "projects.subtitle": "Choose a category to filter",
+        "projects.more": "Show more",
+
+        "filter.all": "All",
+        "filter.domy_szkieletowe": "Timber houses",
+        "filter.elewacje": "Elevations",
+        "filter.tarasy": "Terraces",
+        "filter.sauny": "Saunas",
+        "filter.ogrodzenie": "Fences",
+        "filter.projekty_3d": "3D Projects",
+
+        "aboutus.title": "MBQ is the company you were looking for!",
+        "aboutus.l1": "Construction or renovation does not have to be a problem.",
+        "aboutus.l2": "Change your surroundings with us.",
+        "aboutus.l3": "We know what we’re doing and we take care of everything — quickly and flawlessly.",
+
+        "contact.title": "Contact us!",
+        "contact.subtitle": "We're waiting for your message.",
+
+        "form.name": "Full name",
+        "form.email": "Email",
+        "form.message": "Message",
+
+        "contact.send": "Send",
+
+        "bubble.text": "Interested? Contact us!",
+        "footer.copy": "© 2025 MBQ Michał Blandzi"
+    }
+};
+
+let currentLang = 'pl';
+
+function applyLang(lang) {
+    currentLang = lang;
+
+    document.querySelectorAll('[data-key]').forEach(node => {
+        const key = node.getAttribute('data-key');
+        if (!key) return;
+
+        const val = translations[lang] && translations[lang][key];
+        if (typeof val === 'undefined') return;
+
+        if (
+            (node.tagName.toLowerCase() === 'input' ||
+                node.tagName.toLowerCase() === 'textarea') &&
+            typeof node.placeholder !== "undefined"
+        ) {
+            node.placeholder = val;
+        } else {
+            node.innerHTML = val;
+        }
+    });
+
+    const langBtn = document.getElementById('lang-switch');
+    if (langBtn) langBtn.textContent = lang === 'pl' ? 'EN' : 'PL';
+
+    const hiddenLang = document.getElementById('contact-lang');
+    if (hiddenLang) hiddenLang.value = lang;
+
+    if (typeof onGlobalLangChange === 'function') {
+        onGlobalLangChange(lang);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    applyLang('pl');
+
+    setTimeout(() => {
+        const bubble = document.getElementById('contact-bubble');
+        if (bubble) bubble.style.display = 'block';
+    }, 5000);
+});
+
+document.getElementById('lang-switch').addEventListener('click', function () {
+    const newLang = currentLang === 'pl' ? 'en' : 'pl';
+    applyLang(newLang);
+});
+
+/* prettyPhoto bubble handling */
+$(document).on('click', "a[rel^='prettyPhoto']", () => {
+    $('#contact-bubble').hide();
+});
+
+document.addEventListener('pp_closed', () => {
+    setTimeout(() => {
+        const bubble = document.getElementById('contact-bubble');
+        if (bubble) bubble.style.display = 'block';
+    }, 6000);
+});
+</script>
+
+</body>
+</html>
