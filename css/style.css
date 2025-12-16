@@ -585,8 +585,130 @@ div.dark_square .pp_content,
 }
 
 /* ---------- ABOUT US ---------- */
-#aboutus .col-md-12.wwa {
-    margin-top: 15px;
+#aboutus {
+    background: linear-gradient(to bottom, #f8f9fa 0%, #ffffff 100%);
+}
+
+#aboutus .section-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+}
+
+#aboutus .section-subtitle {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 50px;
+}
+
+/* Features Grid */
+.about-features {
+    margin-top: 40px;
+    margin-bottom: 60px;
+}
+
+.about-feature-box {
+    text-align: center;
+    padding: 30px 20px;
+    margin-bottom: 30px;
+    transition: transform 0.3s ease;
+}
+
+.about-feature-box:hover {
+    transform: translateY(-10px);
+}
+
+.about-feature-box .feature-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    background: linear-gradient(135deg, #2a8dd8 0%, #1a6fb8 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 20px rgba(42, 141, 216, 0.3);
+}
+
+.about-feature-box .feature-icon i {
+    font-size: 36px;
+    color: #fff;
+}
+
+.about-feature-box h4 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.about-feature-box p {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Stats Section */
+.about-stats {
+    background: linear-gradient(135deg, #2a8dd8 0%, #1a6fb8 100%);
+    padding: 60px 0;
+    color: #fff;
+    margin: 40px 0;
+}
+
+.stat-box {
+    text-align: center;
+    padding: 20px;
+}
+
+.stat-number {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.stat-label {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.9);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+    #aboutus .section-title {
+        font-size: 28px;
+    }
+    
+    #aboutus .section-subtitle {
+        font-size: 16px;
+    }
+    
+    .stat-number {
+        font-size: 36px;
+    }
+    
+    .stat-label {
+        font-size: 14px;
+    }
+    
+    .about-cta h3 {
+        font-size: 24px;
+    }
+    
+    .about-contact {
+        flex-direction: column;
+    }
+    
+    .btn-phone,
+    .btn-contact {
+        width: 100%;
+        max-width: 280px;
+    }
 }
 
 /* ---------- CONTACT SECTION ---------- */

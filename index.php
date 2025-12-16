@@ -193,19 +193,67 @@
 
 <!-- O NAS -->
 <div id="aboutus" class="section">
+    <!-- Main Title -->
     <div class="container text-center">
-        <h3 data-key="aboutus.title">MBQ jest firmą, której szukałeś!</h3>
-        <h4 data-key="aboutus.l1">Przekonaj się, że budowa, czy remont, nie muszą być problemem.</h4>
-        <h4 data-key="aboutus.l2">Razem z nami zmień swoje otoczenie.</h4>
-        <h4 data-key="aboutus.l3">Znamy się na tym i zajmiemy się wszystkim. Sprawnie i bezbłędnie : )</h4>
+        <h2 class="section-title" data-key="aboutus.title">MBQ jest firmą, której szukałeś!</h2>
+        <p class="section-subtitle" data-key="aboutus.subtitle">Profesjonalizm i doświadczenie w każdym projekcie</p>
     </div>
 
-    <div class="container" style="margin-top:30px;">
-        <div class="row">
-            <div class="col-md-12 hr1"><hr/></div>
+    <!-- Features Grid -->
+    <div class="container">
+        <div class="row about-features">
+            <div class="col-md-4 col-sm-6">
+                <div class="about-feature-box">
+                    <div class="feature-icon">
+                        <i class="fa fa-check-circle"></i>
+                    </div>
+                    <h4 data-key="aboutus.feature1.title">Jakość i Precyzja</h4>
+                    <p data-key="aboutus.feature1.desc">Każdy projekt wykonujemy z najwyższą starannością i dbałością o detale.</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="about-feature-box">
+                    <div class="feature-icon">
+                        <i class="fa fa-clock-o"></i>
+                    </div>
+                    <h4 data-key="aboutus.feature2.title">Terminowość</h4>
+                    <p data-key="aboutus.feature2.desc">Dotrzymujemy ustalonych terminów i harmonogramów prac.</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="about-feature-box">
+                    <div class="feature-icon">
+                        <i class="fa fa-users"></i>
+                    </div>
+                    <h4 data-key="aboutus.feature3.title">Doświadczony Zespół</h4>
+                    <p data-key="aboutus.feature3.desc">Nasz zespół to wykwalifikowani specjaliści z wieloletnim doświadczeniem.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
-            <div class="col-md-12 wwa">
-                <h3><i class="fa fa-phone"></i> +48 515 091 300</h3>
+    <!-- Stats Section -->
+    <div class="about-stats">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="stat-box">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label" data-key="aboutus.stat1">Lat Doświadczenia</div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="stat-box">
+                        <div class="stat-number">200+</div>
+                        <div class="stat-label" data-key="aboutus.stat2">Zrealizowanych Projektów</div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="stat-box">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label" data-key="aboutus.stat3">Zadowolonych Klientów</div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -460,9 +508,16 @@ const translations = {
         "filter.projekty_3d": "Projekty 3D",
 
         "aboutus.title": "MBQ jest firmą, której szukałeś!",
-        "aboutus.l1": "Przekonaj się, że budowa, czy remont, nie muszą być problemem.",
-        "aboutus.l2": "Razem z nami zmień swoje otoczenie.",
-        "aboutus.l3": "Znamy się na tym i zajmiemy się wszystkim. Sprawnie i bezbłędnie : )",
+        "aboutus.subtitle": "Tworzymy przestrzeń Twoich marzeń – od projektu po realizację",
+        "aboutus.feature1.title": "Jakość i Precyzja",
+        "aboutus.feature1.desc": "Każdy projekt wykonujemy z najwyższą starannością i dbałością o detale.",
+        "aboutus.feature2.title": "Terminowość",
+        "aboutus.feature2.desc": "Dotrzymujemy ustalonych terminów i harmonogramów prac.",
+        "aboutus.feature3.title": "Doświadczony Zespół",
+        "aboutus.feature3.desc": "Nasz zespół to wykwalifikowani specjaliści z wieloletnim doświadczeniem.",
+        "aboutus.stat1": "Lat Doświadczenia",
+        "aboutus.stat2": "Zrealizowanych Projektów",
+        "aboutus.stat3": "Zadowolonych Klientów",
 
         "contact.title": "Skontaktuj się z nami!",
         "contact.subtitle": "Czekamy na Twój telefon lub wiadomość.",
@@ -518,9 +573,16 @@ const translations = {
         "filter.projekty_3d": "3D Projects",
 
         "aboutus.title": "MBQ is the company you were looking for!",
-        "aboutus.l1": "Construction or renovation does not have to be a problem.",
-        "aboutus.l2": "Change your surroundings with us.",
-        "aboutus.l3": "We know what we’re doing and we take care of everything — quickly and flawlessly.",
+        "aboutus.subtitle": "Creating your dream space – from design to completion",
+        "aboutus.feature1.title": "Quality and Precision",
+        "aboutus.feature1.desc": "We execute every project with the utmost care and attention to detail.",
+        "aboutus.feature2.title": "Timeliness",
+        "aboutus.feature2.desc": "We meet agreed deadlines and work schedules.",
+        "aboutus.feature3.title": "Experienced Team",
+        "aboutus.feature3.desc": "Our team consists of qualified specialists with many years of experience.",
+        "aboutus.stat1": "Years of Experience",
+        "aboutus.stat2": "Completed Projects",
+        "aboutus.stat3": "Satisfied Clients",
 
         "contact.title": "Contact us!",
         "contact.subtitle": "We're waiting for your message.",
