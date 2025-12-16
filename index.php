@@ -192,17 +192,16 @@
 <?php include 'realizacje.php'; ?>
 
 <!-- O NAS -->
-<div id="aboutus" class="section">
-    <!-- Main Title -->
-    <div class="container text-center">
-        <h2 class="section-title" data-key="aboutus.title">MBQ jest firmą, której szukałeś!</h2>
-        <p class="section-subtitle" data-key="aboutus.subtitle">Profesjonalizm i doświadczenie w każdym projekcie</p>
-    </div>
-
-    <!-- Features Grid -->
+<div id="aboutus" class="section aboutus-section">
     <div class="container">
+        <div class="aboutus-content">
+            <h2 class="section-title" data-key="aboutus.title">MBQ jest firmą, której szukałeś!</h2>
+            <p class="aboutus-description" data-key="aboutus.description">Jesteśmy firmą specjalizującą się w projektowaniu i budowie domów szkieletowych oraz realizacji kompleksowych usług budowlanych. Nasz zespół doświadczonych specjalistów zapewnia profesjonalną obsługę na każdym etapie - od projektu po realizację.</p>
+        </div>
+        
+        <!-- Features -->
         <div class="row about-features">
-            <div class="col-md-4 col-sm-6">
+            <div class="col-md-4 col-sm-4">
                 <div class="about-feature-box">
                     <div class="feature-icon">
                         <i class="fa fa-check-circle"></i>
@@ -211,7 +210,7 @@
                     <p data-key="aboutus.feature1.desc">Każdy projekt wykonujemy z najwyższą starannością i dbałością o detale.</p>
                 </div>
             </div>
-            <div class="col-md-4 col-sm-6">
+            <div class="col-md-4 col-sm-4">
                 <div class="about-feature-box">
                     <div class="feature-icon">
                         <i class="fa fa-clock-o"></i>
@@ -220,39 +219,13 @@
                     <p data-key="aboutus.feature2.desc">Dotrzymujemy ustalonych terminów i harmonogramów prac.</p>
                 </div>
             </div>
-            <div class="col-md-4 col-sm-6">
+            <div class="col-md-4 col-sm-4">
                 <div class="about-feature-box">
                     <div class="feature-icon">
                         <i class="fa fa-users"></i>
                     </div>
                     <h4 data-key="aboutus.feature3.title">Doświadczony Zespół</h4>
                     <p data-key="aboutus.feature3.desc">Nasz zespół to wykwalifikowani specjaliści z wieloletnim doświadczeniem.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Stats Section -->
-    <div class="about-stats">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 col-sm-4 col-xs-12">
-                    <div class="stat-box">
-                        <div class="stat-number">10+</div>
-                        <div class="stat-label" data-key="aboutus.stat1">Lat Doświadczenia</div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-4 col-xs-12">
-                    <div class="stat-box">
-                        <div class="stat-number">200+</div>
-                        <div class="stat-label" data-key="aboutus.stat2">Zrealizowanych Projektów</div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-4 col-xs-12">
-                    <div class="stat-box">
-                        <div class="stat-number">100%</div>
-                        <div class="stat-label" data-key="aboutus.stat3">Zadowolonych Klientów</div>
-                    </div>
                 </div>
             </div>
         </div>
