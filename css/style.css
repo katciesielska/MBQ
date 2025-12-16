@@ -227,6 +227,13 @@ body {
     margin-top: 30px;
 }
 
+#about h3 {
+    font-size: 28px;
+    font-weight: 500;
+    color: #2a3b4c;
+    letter-spacing: 0.5px;
+}
+
 .services-grid {
     display: flex;
     flex-wrap: wrap;
@@ -328,15 +335,15 @@ body {
 }
 
 .contact-header .section-title {
-    font-size: 36px;
-    font-weight: 700;
-    color: #333;
+    font-size: 28px;
+    font-weight: 500;
+    color: #2a3b4c;
     margin-bottom: 15px;
 }
 
 .contact-header .section-subtitle {
-    font-size: 18px;
-    color: #666;
+    font-size: 16px;
+    color: #777;
 }
 
 /* Simple Contact Info */
@@ -434,7 +441,7 @@ body {
     }
     
     .contact-header .section-title {
-        font-size: 28px;
+        font-size: 24px;
     }
     
     .contact-form-simple {
@@ -482,12 +489,13 @@ div.dark_square .pp_content,
     margin-top: 12px;
     text-align:center;
 }
-.project h3{
-    letter-spacing: 1px;
+.project h3,
+#project h3 {
+    font-size: 28px;
+    font-weight: 500;
+    color: #2a3b4c;
+    letter-spacing: 0.5px;
     font-family: 'Roboto', 'sans-serif';
-    font-size:37px;
-    font-weight:400;
-    color:#2f2f2f;
 }
 .project h4{
     margin-left: -5px;
@@ -718,16 +726,16 @@ div.dark_square .pp_content,
 }
 
 #aboutus .section-title {
-    font-size: 36px;
-    font-weight: 700;
-    color: #333;
+    font-size: 28px;
+    font-weight: 500;
+    color: #2a3b4c;
     margin-bottom: 15px;
     position: relative;
     display: inline-block;
 }
 
 #aboutus .section-subtitle {
-    font-size: 18px;
+    font-size: 16px;
     color: #666;
     margin-bottom: 50px;
 }
@@ -809,7 +817,7 @@ div.dark_square .pp_content,
 /* Responsive */
 @media (max-width: 767px) {
     #aboutus .section-title {
-        font-size: 28px;
+        font-size: 24px;
     }
     
     #aboutus .section-subtitle {
