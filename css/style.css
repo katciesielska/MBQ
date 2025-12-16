@@ -269,7 +269,7 @@ body {
 
 /* ---------- GALLERY (realizacje) ---------- */
 #project {
-    background: #f9f9f9;
+    background: #fff;
     padding: 60px 0;
 }
 
@@ -722,7 +722,7 @@ div.dark_square .pp_content,
 
 /* ---------- ABOUT US ---------- */
 #aboutus {
-    background: linear-gradient(to bottom, #f8f9fa 0%, #ffffff 100%);
+    background: #fff;
 }
 
 #aboutus .section-title {
