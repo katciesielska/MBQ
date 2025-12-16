@@ -240,8 +240,50 @@
     </div>
 </div>
 
-<footer>
-    <p data-key="footer.copy">&copy; 2025 MBQ Michał Blandzi</p>
+<footer class="site-footer">
+    <div class="container">
+        <div class="row">
+            <!-- Company Info -->
+            <div class="col-md-5 col-sm-12">
+                <div class="footer-section">
+                    <h3 data-key="footer.about">O firmie</h3>
+                    <img src="images/logo.png" alt="MBQ Logo" class="footer-logo">
+                    <p data-key="footer.description">Profesjonalne wykonawstwo domów szkieletowych, tarasów, ogrodzeń i elewacji. Jakość i precyzja w każdym projekcie.</p>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="col-md-3 col-sm-6">
+                <div class="footer-section">
+                    <h3 data-key="footer.links">Linki</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home" data-key="nav.home">Home</a></li>
+                        <li><a href="#about" data-key="nav.services">Usługi</a></li>
+                        <li><a href="#project" data-key="nav.projects">Realizacje</a></li>
+                        <li><a href="#aboutus" data-key="nav.about">O nas</a></li>
+                        <li><a href="#contact" data-key="nav.contact">Kontakt</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="col-md-4 col-sm-6">
+                <div class="footer-section">
+                    <h3 data-key="footer.contact">Kontakt</h3>
+                    <ul class="footer-contact">
+                        <li><i class="fa fa-envelope"></i> <a href="mailto:mbq.kontakt@gmail.com">mbq.kontakt@gmail.com</a></li>
+                        <li><i class="fa fa-phone"></i> <a href="tel:+48515091300" data-key="footer.phone">+48 515 091 300</a></li>
+                        <li><i class="fa fa-map-marker"></i> <span data-key="footer.location">Polska</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <p data-key="footer.copy">&copy; 2025 MBQ Michał Blandzi. <span data-key="footer.rights">Wszelkie prawa zastrzeżone.</span></p>
+        </div>
+    </div>
 </footer>
 
 <!-- JS -->
@@ -432,7 +474,14 @@ const translations = {
         "contact.send": "Wyślij",
 
         "bubble.text": "Zainteresowana/y? Skontaktuj się z nami!",
-        "footer.copy": "© 2025 MBQ Michał Blandzi"
+        "footer.copy": "© 2025 MBQ Michał Blandzi.",
+        "footer.rights": "Wszelkie prawa zastrzeżone.",
+        "footer.about": "O firmie",
+        "footer.description": "Profesjonalne wykonawstwo domów szkieletowych, tarasów, ogrodzeń i elewacji. Jakość i precyzja w każdym projekcie.",
+        "footer.links": "Linki",
+        "footer.contact": "Kontakt",
+        "footer.phone": "+48 515 091 300",
+        "footer.location": "Polska"
     },
 
     "en": {
@@ -483,7 +532,14 @@ const translations = {
         "contact.send": "Send",
 
         "bubble.text": "Interested? Contact us!",
-        "footer.copy": "© 2025 MBQ Michał Blandzi"
+        "footer.copy": "© 2025 MBQ Michał Blandzi.",
+        "footer.rights": "All rights reserved.",
+        "footer.about": "About Company",
+        "footer.description": "Professional construction of frame houses, terraces, fences and facades. Quality and precision in every project.",
+        "footer.links": "Links",
+        "footer.contact": "Contact",
+        "footer.phone": "+48 515 091 300",
+        "footer.location": "Poland"
     }
 };
 

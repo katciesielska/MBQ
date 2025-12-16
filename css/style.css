@@ -431,8 +431,134 @@ div.dark_square .pp_content,
     text-align: center !important;
 }
 
-footer p {
-    text-align: center !important;
+/* ---------- FOOTER STYLES ---------- */
+.site-footer {
+    background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+    color: #e0e0e0;
+    padding: 60px 0 0;
+    margin-top: 80px;
+    border-top: 3px solid #2a8dd8;
+}
+
+.site-footer .footer-section {
+    margin-bottom: 40px;
+}
+
+.site-footer h3 {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+.site-footer h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 2px;
+    background: #2a8dd8;
+}
+
+.site-footer .footer-logo {
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.site-footer p {
+    color: #b0b0b0;
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+.site-footer .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.site-footer .footer-links li {
+    margin-bottom: 12px;
+}
+
+.site-footer .footer-links a {
+    color: #b0b0b0;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.site-footer .footer-links a:hover {
+    color: #2a8dd8;
+    padding-left: 5px;
+}
+
+.site-footer .footer-contact {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.site-footer .footer-contact li {
+    color: #b0b0b0;
+    margin-bottom: 15px;
+    font-size: 14px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.site-footer .footer-contact li i {
+    color: #2a8dd8;
+    margin-right: 12px;
+    margin-top: 3px;
+    font-size: 16px;
+    min-width: 16px;
+}
+
+.site-footer .footer-contact a {
+    color: #b0b0b0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.site-footer .footer-contact a:hover {
+    color: #2a8dd8;
+}
+
+.site-footer .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 25px 0;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.site-footer .footer-bottom p {
+    margin: 0;
+    color: #808080;
+    font-size: 13px;
+}
+
+/* Responsive Footer */
+@media (max-width: 767px) {
+    .site-footer {
+        padding: 40px 0 0;
+        margin-top: 50px;
+    }
+    
+    .site-footer .footer-section {
+        margin-bottom: 35px;
+    }
+    
+    .site-footer h3 {
+        font-size: 16px;
+    }
 }
 
 /* ---------- HEADER NAVIGATION ---------- */
