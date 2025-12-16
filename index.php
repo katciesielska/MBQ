@@ -278,6 +278,7 @@
 
         <!-- Contact Form -->
         <div class="contact-form-simple">
+            <h3 class="form-title" data-key="contact.form.title">Napisz do nas</h3>
             <form id="contactForm" method="post" action="contact.php">
                 <input type="hidden" name="lang" id="contact-lang" value="pl">
 
@@ -536,6 +537,7 @@ const translations = {
 
         "contact.title": "Skontaktuj się z nami!",
         "contact.subtitle": "Czekamy na Twój telefon lub wiadomość.",
+        "contact.form.title": "Napisz do nas",
 
         "form.name": "Imię i nazwisko",
         "form.email": "Email",
@@ -602,6 +604,7 @@ const translations = {
 
         "contact.title": "Contact us!",
         "contact.subtitle": "We're waiting for your message.",
+        "contact.form.title": "Send us a message",
 
         "form.name": "Full name",
         "form.email": "Email",

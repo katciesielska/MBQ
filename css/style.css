@@ -390,6 +390,14 @@ body {
     box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
 }
 
+.contact-form-simple .form-title {
+    font-size: 24px;
+    font-weight: 500;
+    color: #2a3b4c;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
 #contactForm {
     max-width: 100%;
     margin: 0;
