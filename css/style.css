@@ -342,8 +342,11 @@ body {
 }
 
 .contact-header .section-subtitle {
-    font-size: 16px;
-    color: #777;
+    font-size: 18px;
+    font-weight: 400;
+    color: #6b7280;
+    letter-spacing: 0.3px;
+    line-height: 1.6;
 }
 
 /* Simple Contact Info */
@@ -355,9 +358,9 @@ body {
 .phone-number {
     display: inline-flex;
     align-items: center;
-    gap: 15px;
-    padding: 20px 40px;
-    font-size: 32px;
+    gap: 12px;
+    padding: 16px 32px;
+    font-size: 26px;
     font-weight: 700;
     color: #2a8dd8;
     text-decoration: none;
@@ -385,9 +388,10 @@ body {
     max-width: 700px;
     margin: 0 auto;
     background: transparent;
-    padding: 50px 20px;
+    padding: 30px 20px 50px;
     border-radius: 0;
     box-shadow: none;
+    border-top: 2px solid #2a8dd8;
 }
 
 .contact-form-simple .form-title {
