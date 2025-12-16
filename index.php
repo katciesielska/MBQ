@@ -260,31 +260,45 @@
 </div>
 
 <!-- KONTAKT -->
-<div id="contact" class="section">
-    <div class="container text-center">
-        <h3 data-key="contact.title">Skontaktuj się z nami!</h3>
-        <h4 data-key="contact.subtitle">Czekamy na Twój telefon lub wiadomość.</h4>
+<div id="contact" class="section contact-section">
+    <div class="container">
+        <!-- Section Header -->
+        <div class="text-center contact-header">
+            <h2 class="section-title" data-key="contact.title">Skontaktuj się z nami!</h2>
+            <p class="section-subtitle" data-key="contact.subtitle">Czekamy na Twój telefon lub wiadomość.</p>
+        </div>
 
-        <form id="contactForm" method="post" action="contact.php">
-            <input type="hidden" name="lang" id="contact-lang" value="pl">
+        <!-- Contact Info -->
+        <div class="contact-phone-cta">
+            <a href="tel:+48515091300" class="phone-number">
+                <i class="fa fa-phone"></i>
+                <span>515 091 300</span>
+            </a>
+        </div>
 
-            <div class="form-group">
-                <input type="text" name="name" class="form-control" data-key="form.name"
-                       placeholder="Imię i nazwisko" required>
-            </div>
+        <!-- Contact Form -->
+        <div class="contact-form-simple">
+            <form id="contactForm" method="post" action="contact.php">
+                <input type="hidden" name="lang" id="contact-lang" value="pl">
 
-            <div class="form-group">
-                <input type="email" name="email" class="form-control" data-key="form.email"
-                       placeholder="Email" required>
-            </div>
+                <div class="form-group">
+                    <input type="text" name="name" class="form-control" data-key="form.name"
+                           placeholder="Imię i nazwisko" required>
+                </div>
 
-            <div class="form-group">
-                <textarea name="message" class="form-control" data-key="form.message"
-                          placeholder="Wiadomość" rows="4" required></textarea>
-            </div>
+                <div class="form-group">
+                    <input type="email" name="email" class="form-control" data-key="form.email"
+                           placeholder="Email" required>
+                </div>
 
-            <button type="submit" class="btn btn-primary" data-key="contact.send">Wyślij</button>
-        </form>
+                <div class="form-group">
+                    <textarea name="message" class="form-control" data-key="form.message"
+                              placeholder="Wiadomość" rows="5" required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-contact-submit" data-key="contact.send">Wyślij</button>
+            </form>
+        </div>
     </div>
 </div>
 
@@ -322,6 +336,7 @@
                         <li><i class="fa fa-envelope"></i> <a href="mailto:mbq.kontakt@gmail.com">mbq.kontakt@gmail.com</a></li>
                         <li><i class="fa fa-phone"></i> <a href="tel:+48515091300" data-key="footer.phone">+48 515 091 300</a></li>
                         <li><i class="fa fa-map-marker"></i> <span data-key="footer.location">Polska</span></li>
+                        <li><i class="fa fa-clock-o"></i> <span data-key="footer.hours">Pn-Pt: 8:00 - 18:00</span></li>
                     </ul>
                 </div>
             </div>
@@ -536,7 +551,8 @@ const translations = {
         "footer.links": "Linki",
         "footer.contact": "Kontakt",
         "footer.phone": "+48 515 091 300",
-        "footer.location": "Polska"
+        "footer.location": "Polska",
+        "footer.hours": "Pn-Pt: 8:00 - 18:00"
     },
 
     "en": {
@@ -601,7 +617,8 @@ const translations = {
         "footer.links": "Links",
         "footer.contact": "Contact",
         "footer.phone": "+48 515 091 300",
-        "footer.location": "Poland"
+        "footer.location": "Poland",
+        "footer.hours": "Mon-Fri: 8:00 AM - 6:00 PM"
     }
 };
 
