@@ -384,10 +384,10 @@ body {
 .contact-form-simple {
     max-width: 700px;
     margin: 0 auto;
-    background: #fff;
-    padding: 50px;
-    border-radius: 10px;
-    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+    background: transparent;
+    padding: 50px 20px;
+    border-radius: 0;
+    box-shadow: none;
 }
 
 .contact-form-simple .form-title {
