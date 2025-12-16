@@ -15,25 +15,6 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,700|Open+Sans:700" rel="stylesheet">
 
     <script src="js/jquery-1.8.3.min.js"></script>
-
-    <style>
-        /* small per-page overrides to ensure header spacing works with fixed header */
-        html, body { height: 100%; }
-        body {
-            padding-top: 70px; /* reserve space for fixed top bar */
-            margin: 0;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            font-family: Roboto, "Helvetica Neue", Arial, sans-serif;
-        }
-
-        /* minimal safety: make sure menu height respected */
-        #menuF { min-height: 70px; }
-
-        /* make service boxes look clickable and keyboard-accessible */
-        .service-box { cursor: pointer; outline: none; }
-        .service-box:focus { box-shadow: 0 0 0 3px rgba(0,123,255,0.25); }
-    </style>
 </head>
 
 <body>
@@ -45,17 +26,16 @@
 <script>
 /* CONTACT BUBBLE – delayed show + click scroll */
 (function() {
-
     function showBubbleDelayed() {
         const bubble = document.getElementById('contact-bubble');
         if (!bubble) return;
 
-        // hidden initially
+        // Hidden initially
         bubble.style.display = 'none';
         bubble.style.opacity = '0';
         bubble.style.visibility = 'hidden';
 
-        // show after 5s
+        // Show after 5s
         setTimeout(() => {
             bubble.style.display = 'block';
             bubble.style.visibility = 'visible';
@@ -64,42 +44,31 @@
         }, 5000);
     }
 
-    // ensure DOM
+    // Ensure DOM is ready
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', showBubbleDelayed);
     } else {
         showBubbleDelayed();
     }
 
-    /* CLICK → SCROLL TO CONTACT */
+    /* Click to scroll to contact section */
     document.addEventListener('click', function(e) {
         const bubble = document.getElementById('contact-bubble');
         if (!bubble) return;
 
         if (e.target === bubble || bubble.contains(e.target)) {
-
             const contact = document.getElementById('contact');
             const header = document.getElementById('menuF');
             if (!contact) return;
 
             const headerH = header ? header.offsetHeight : 70;
+            const y = contact.getBoundingClientRect().top + window.pageYOffset - headerH - 8;
 
-            const y = contact.getBoundingClientRect().top
-                    + window.pageYOffset
-                    - headerH
-                    - 8;
-
-            window.scrollTo({
-                top: y,
-                behavior: 'smooth'
-            });
+            window.scrollTo({ top: y, behavior: 'smooth' });
         }
     });
-
 })();
 </script>
-
-
 
 <!-- HEADER (fixed black bar is inside #menuF) -->
 <div id="home">
@@ -110,17 +79,17 @@
                 <div class="row" style="align-items:center;">
 
                     <!-- LOGO (left) -->
-                    <div class="logo col-md-4 col-sm-6 col-xs-6" style="display:flex;align-items:center;">
+                    <div class="logo col-md-4 col-sm-6 col-xs-6">
                         <a href="#home" aria-label="MBQ home">
-                            <img id="logo-main" src="images/logo.png" alt="MBQ" style="height:54px; max-height:80px;">
+                            <img id="logo-main" src="images/logo.png" alt="MBQ">
                         </a>
                     </div>
 
                     <!-- RIGHT CONTROLS: language + hamburger -->
-                    <div class="col-md-8 col-sm-6 col-xs-6" style="display:flex; justify-content:flex-end; align-items:center; gap:10px;">
+                    <div class="col-md-8 col-sm-6 col-xs-6">
 
                         <!-- language switch on top bar -->
-                        <button id="lang-switch" aria-label="Zmień język" style="font-weight:700;">EN</button>
+                        <button id="lang-switch" aria-label="Zmień język">EN</button>
 
                         <!-- hamburger to open right side menu -->
                         <button id="hamburger" aria-label="Otwórz menu" class="hamburger-btn" type="button">
@@ -145,8 +114,8 @@
         </nav>
         <div id="sideMenuOverlay" aria-hidden="true"></div>
 
-        <!-- SLIDER (bez zmian) -->
-        <div class="container-fluid" style="padding:0;">
+        <!-- SLIDER -->
+        <div class="container-fluid">
             <div class="camera_wrap camera_white_skin" id="camera_wrap_1">
 
                 <div data-src="images/slides/blank.gif">
@@ -174,17 +143,17 @@
 </div>
 
 <!-- USŁUGI -->
-<div id="about" class="section" style="padding:60px 0;">
+<div id="about" class="section">
     <div class="container text-center">
         <h3 data-key="services.title">Zakres usług MBQ</h3>
         <p data-key="services.desc">Co możemy dla Ciebie wykonać — kompleksowo...</p>
     </div>
 
-    <div class="container" style="margin-top:30px;">
+    <div class="container">
         <!-- responsive grid: 3 cols desktop, 2 tablet, 1 mobile -->
         <div class="services-grid">
 
-            <!-- each service-box now has data-folder matching the folder name under images/realizacje -->
+            <!-- each service-box has data-folder matching the folder name under images/realizacje -->
             <div class="service-box" role="button" tabindex="0" data-folder="domy_szkieletowe" aria-label="Domy szkieletowe">
                 <i class="fa-solid fa-house"></i>
                 <h4 data-key="svc.houses">Domy szkieletowe</h4>
@@ -223,7 +192,7 @@
 <?php include 'realizacje.php'; ?>
 
 <!-- O NAS -->
-<div id="aboutus" class="section" style="padding:60px 0;">
+<div id="aboutus" class="section">
     <div class="container text-center">
         <h3 data-key="aboutus.title">MBQ jest firmą, której szukałeś!</h3>
         <h4 data-key="aboutus.l1">Przekonaj się, że budowa, czy remont, nie muszą być problemem.</h4>
@@ -235,7 +204,7 @@
         <div class="row">
             <div class="col-md-12 hr1"><hr/></div>
 
-            <div class="col-md-12 wwa" style="margin-top:15px;">
+            <div class="col-md-12 wwa">
                 <h3><i class="fa fa-phone"></i> +48 515 091 300</h3>
             </div>
         </div>
@@ -243,12 +212,12 @@
 </div>
 
 <!-- KONTAKT -->
-<div id="contact" class="section" style="padding:60px 0;">
+<div id="contact" class="section">
     <div class="container text-center">
         <h3 data-key="contact.title">Skontaktuj się z nami!</h3>
         <h4 data-key="contact.subtitle">Czekamy na Twój telefon lub wiadomość.</h4>
 
-        <form id="contactForm" method="post" action="contact.php" style="max-width:820px;margin:0 auto;">
+        <form id="contactForm" method="post" action="contact.php">
             <input type="hidden" name="lang" id="contact-lang" value="pl">
 
             <div class="form-group">
@@ -283,7 +252,7 @@
 <script src="js/jquery.prettyPhoto.js"></script>
 
 <script>
-/* ---------- SLIDER ---------- */
+/* SLIDER */
 jQuery(function () {
     jQuery('#camera_wrap_1').camera({
         height: '490px',
@@ -296,7 +265,7 @@ jQuery(function () {
     });
 });
 
-/* ---------- SIDE MENU (RIGHT PANEL) ---------- */
+/* SIDE MENU (RIGHT PANEL) */
 (function() {
     const hamburger = document.getElementById('hamburger');
     const side = document.getElementById('sideMenu');
@@ -324,15 +293,16 @@ jQuery(function () {
     sideClose.addEventListener('click', closeSide);
     overlay.addEventListener('click', closeSide);
 
-    // Close when clicking a menu link + smooth scroll behavior preserved
-    side.querySelectorAll('a[href^="#"]').forEach(a=>{
-        a.addEventListener('click', function(e){
+    // Close when clicking a menu link
+    side.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', function(e) {
             closeSide();
-            // smooth scroll same as other anchors
             const href = this.getAttribute('href');
-            if(!href || href === '#') return;
+            if (!href || href === '#') return;
+            
             const targetId = href.substring(1);
-            const target = document.getElementById(targetId) || document.querySelector('[name="'+targetId+'"]');
+            const target = document.getElementById(targetId) || document.querySelector('[name="' + targetId + '"]');
+            
             if (target) {
                 e.preventDefault();
                 const headerH = document.getElementById('menuF').offsetHeight || 70;
@@ -342,38 +312,27 @@ jQuery(function () {
         });
     });
 
-    // ESC closes
-    document.addEventListener('keydown', function(e){
-        if(e.key === 'Escape') closeSide();
+    // ESC closes menu
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeSide();
     });
 })();
 
-/* ---------- SCROLL OFFSET for the rest of anchors ---------- */
+/* SCROLL OFFSET for anchor links */
 (function () {
-    const headerHeight = () =>
-        document.getElementById('menuF').offsetHeight || 70;
+    const headerHeight = () => document.getElementById('menuF').offsetHeight || 70;
 
     function handleAnchorClick(e) {
         const href = this.getAttribute('href');
         if (!href || href === '#') return;
 
         const targetId = href.substring(1);
-        const target =
-            document.getElementById(targetId) ||
-            document.querySelector('[name="' + targetId + '"]');
+        const target = document.getElementById(targetId) || document.querySelector('[name="' + targetId + '"]');
 
         if (target) {
             e.preventDefault();
-            const top =
-                target.getBoundingClientRect().top +
-                window.pageYOffset -
-                headerHeight() -
-                8;
-
-            window.scrollTo({
-                top: top,
-                behavior: 'smooth'
-            });
+            const top = target.getBoundingClientRect().top + window.pageYOffset - headerHeight() - 8;
+            window.scrollTo({ top: top, behavior: 'smooth' });
         }
     }
 
@@ -382,18 +341,20 @@ jQuery(function () {
     });
 })();
 
-/* ---------- SERVICES → trigger project filter ---------- */
-(function(){
+/* SERVICES → trigger project filter */
+(function() {
     function emitProjectFilter(folder) {
-        // dispatch event so realizacje.php script can listen (works even if realizacje loaded later)
+        // Dispatch event for realizacje.php to listen
         document.dispatchEvent(new CustomEvent('projectFilterRequested', { detail: { folder } }));
-        // also set URL param (optional) so it's shareable/bookmarkable
+        
+        // Set URL param for shareability
         try {
             const url = new URL(window.location);
             url.searchParams.set('kategoria', folder);
             window.history.replaceState({}, '', url);
         } catch(e) {}
-        // scroll to projects section
+        
+        // Scroll to projects section
         const headerH = document.getElementById('menuF') ? document.getElementById('menuF').offsetHeight : 70;
         const target = document.getElementById('project');
         if (target) {
@@ -402,11 +363,14 @@ jQuery(function () {
         }
     }
 
-    document.addEventListener('DOMContentLoaded', function(){
-        document.querySelectorAll('.service-box[data-folder]').forEach(el=>{
-            el.addEventListener('click', function(){ emitProjectFilter(el.getAttribute('data-folder')); });
-            // keyboard: Enter or Space
-            el.addEventListener('keydown', function(e){
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.service-box[data-folder]').forEach(el => {
+            el.addEventListener('click', function() { 
+                emitProjectFilter(el.getAttribute('data-folder')); 
+            });
+            
+            // Keyboard support: Enter or Space
+            el.addEventListener('keydown', function(e) {
                 if (e.key === 'Enter' || e.key === ' ') {
                     e.preventDefault();
                     emitProjectFilter(el.getAttribute('data-folder'));
@@ -417,7 +381,7 @@ jQuery(function () {
 })();
 </script>
 
-<!-- ---------- TRANSLATIONS (unchanged) ---------- -->
+<!-- TRANSLATIONS -->
 <script>
 const translations = {
     "pl": {
@@ -571,7 +535,7 @@ document.getElementById('lang-switch').addEventListener('click', function () {
     applyLang(newLang);
 });
 
-/* prettyPhoto bubble handling */
+/* PrettyPhoto bubble handling */
 $(document).on('click', "a[rel^='prettyPhoto']", () => {
     $('#contact-bubble').hide();
 });
