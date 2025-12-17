@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MBQ Michał Blandzi</title>
 
-    <!-- CSS -->
     <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/font-awesome.css"> <!-- FA4 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"> <!-- FA6 -->
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="css/camera.css">
     <link rel="stylesheet" href="css/prettyPhoto.css">
     <link rel="stylesheet" href="css/style.css">
@@ -18,25 +17,21 @@
 </head>
 
 <body>
-<!-- CONTACT BUBBLE (clean, fixed, delayed) -->
 <div id="contact-bubble">
     <span class="bubble-text" data-key="bubble.text">Zainteresowana/y? Skontaktuj się z nami!</span>
     <i class="fa fa-phone bubble-icon"></i>
 </div>
 
 <script>
-/* CONTACT BUBBLE – delayed show + click scroll */
 (function() {
     function showBubbleDelayed() {
         const bubble = document.getElementById('contact-bubble');
         if (!bubble) return;
 
-        // Hidden initially
         bubble.style.display = 'none';
         bubble.style.opacity = '0';
         bubble.style.visibility = 'hidden';
 
-        // Show after 5s
         setTimeout(() => {
             bubble.style.display = 'block';
             bubble.style.visibility = 'visible';
@@ -45,14 +40,12 @@
         }, 5000);
     }
 
-    // Ensure DOM is ready
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', showBubbleDelayed);
     } else {
         showBubbleDelayed();
     }
 
-    /* Click to scroll to contact section */
     document.addEventListener('click', function(e) {
         const bubble = document.getElementById('contact-bubble');
         if (!bubble) return;
@@ -71,7 +64,6 @@
 })();
 </script>
 
-<!-- HEADER (fixed black bar is inside #menuF) -->
 <div id="home">
     <div class="headerLine">
 

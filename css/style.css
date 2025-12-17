@@ -1,4 +1,4 @@
-/* RESET (Twoja oryginalna sekcja) */
+/* RESET */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -26,12 +26,10 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* Ensure header spacing with fixed navigation */
 #menuF {
     min-height: 70px;
 }
 
-/* Service boxes: clickable and keyboard-accessible */
 .service-box {
     cursor: pointer;
     outline: none;
