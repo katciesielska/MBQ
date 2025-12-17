@@ -292,7 +292,7 @@ body {
 
 /* ---------- SERVICES GRID (responsive) ---------- */
 .section {
-    padding: 80px 0;
+    padding: 50px 0;
 }
 
 #about .container {
@@ -342,7 +342,7 @@ body {
 /* ---------- GALLERY (realizacje) ---------- */
 #project {
     background: #fff;
-    padding: 80px 0;
+    padding: 50px 0;
 }
 
 #project h3 {
@@ -447,11 +447,11 @@ body {
 /* ---------- CONTACT SECTION ---------- */
 .contact-section {
     background: #fff;
-    padding: 80px 0;
+    padding: 50px 0;
 }
 
 .contact-header {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .contact-header .section-title {
@@ -472,7 +472,7 @@ body {
 /* Simple Contact Info */
 .contact-phone-cta {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .phone-number {
@@ -873,7 +873,7 @@ div.dark_square .pp_content,
 
 .aboutus-section {
     background: #fff;
-    padding: 80px 0;
+    padding: 50px 0;
 }
 
 .aboutus-content {
