@@ -486,7 +486,7 @@ const translations = {
 
         "projects.title": "Nasze realizacje",
         "projects.subtitle": "Wybierz kategorię, aby filtrować",
-        "projects.more": "Pokaż więcej",
+        "projects.more": "Więcej",
 
         "filter.all": "Wszystkie",
         "filter.domy_szkieletowe": "Domy szkieletowe",
@@ -553,7 +553,7 @@ const translations = {
 
         "projects.title": "Our projects",
         "projects.subtitle": "Choose a category to filter",
-        "projects.more": "Show more",
+        "projects.more": "More",
 
         "filter.all": "All",
         "filter.domy_szkieletowe": "Timber houses",

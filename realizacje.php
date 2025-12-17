@@ -99,9 +99,9 @@ $name_map = [
 
     <div class="row gallery-grid" id="gallery-container"></div>
 
-    <div style="margin-top:20px;">
-      <button id="load-more" class="btn btn-primary" style="display:none;" data-key="projects.more">
-        Pokaż więcej
+    <div style="text-align: center; margin-top: 30px;">
+      <button id="load-more" style="display:none;" data-key="projects.more">
+        Więcej
       </button>
     </div>
   </div>
