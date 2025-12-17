@@ -85,13 +85,24 @@
                         </a>
                     </div>
 
-                    <!-- RIGHT CONTROLS: language + hamburger -->
+                    <!-- RIGHT CONTROLS: desktop menu + language + hamburger -->
                     <div class="col-md-8 col-sm-6 col-xs-6">
+
+                        <!-- Desktop Navigation Menu (visible on desktop) -->
+                        <nav class="desktop-menu">
+                            <ul>
+                                <li><a href="#home" data-key="nav.home">Home</a></li>
+                                <li><a href="#about" data-key="nav.services">Usługi</a></li>
+                                <li><a href="#project" data-key="nav.projects">Realizacje</a></li>
+                                <li><a href="#aboutus" data-key="nav.about">O nas</a></li>
+                                <li><a href="#contact" data-key="nav.contact">Kontakt</a></li>
+                            </ul>
+                        </nav>
 
                         <!-- language switch on top bar -->
                         <button id="lang-switch" aria-label="Zmień język">EN</button>
 
-                        <!-- hamburger to open right side menu -->
+                        <!-- hamburger to open right side menu (mobile only) -->
                         <button id="hamburger" aria-label="Otwórz menu" class="hamburger-btn" type="button">
                             <span class="hamburger-box"><span class="hamburger-inner"></span></span>
                         </button>

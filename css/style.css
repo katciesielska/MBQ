@@ -109,7 +109,67 @@ body {
     font-weight:700;
 }
 
-/* ---------- NEW: HAMBURGER + SIDE MENU ---------- */
+/* ---------- NEW: DESKTOP MENU + HAMBURGER + SIDE MENU ---------- */
+
+/* Desktop Navigation Menu */
+.desktop-menu {
+    display: none; /* Hidden on mobile by default */
+}
+
+@media (min-width: 992px) {
+    .desktop-menu {
+        display: flex;
+        align-items: center;
+        flex: 1;
+        justify-content: center;
+        margin-right: 20px;
+    }
+    
+    .desktop-menu ul {
+        list-style: none;
+        display: flex;
+        gap: 30px;
+        margin: 0;
+        padding: 0;
+        align-items: center;
+    }
+    
+    .desktop-menu ul li {
+        margin: 0;
+    }
+    
+    .desktop-menu ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        padding: 10px 0;
+        transition: color 0.3s ease;
+        display: block;
+        position: relative;
+    }
+    
+    .desktop-menu ul li a:hover {
+        color: #2a8dd8;
+    }
+    
+    .desktop-menu ul li a::after {
+        content: '';
+        position: absolute;
+        bottom: 5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: #2a8dd8;
+        transition: width 0.3s ease;
+    }
+    
+    .desktop-menu ul li a:hover::after {
+        width: 100%;
+    }
+}
 
 /* hamburger button */
 .hamburger-btn {
@@ -122,6 +182,13 @@ body {
     justify-content: center;
     z-index: 13010;
 }
+
+@media (min-width: 992px) {
+    .hamburger-btn {
+        display: none; /* Hide hamburger on desktop */
+    }
+}
+
 .hamburger-box { display: inline-block; width: 28px; height: 18px; position: relative; }
 .hamburger-inner,
 .hamburger-inner::before,
