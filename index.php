@@ -475,7 +475,7 @@ const translations = {
         "slide.three": "Nie ma problemu.",
 
         "services.title": "Zakres usług MBQ",
-        "services.desc": "Co możemy dla Ciebie wykonać — kompleksowo...",
+        "services.desc": "Co możemy dla Ciebie wykonać?",
 
         "svc.houses": "Domy szkieletowe",
         "svc.elev": "Elewacje",
@@ -542,7 +542,7 @@ const translations = {
         "slide.three": "No problem.",
 
         "services.title": "Range of MBQ services",
-        "services.desc": "What we can do for you — fully, professionally and stress-free.",
+        "services.desc": "What can we do for you?",
 
         "svc.houses": "Timber houses",
         "svc.elev": "Elevations",
