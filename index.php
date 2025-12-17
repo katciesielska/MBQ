@@ -261,12 +261,12 @@
 
                 <div class="form-group">
                     <input type="text" name="name" class="form-control" data-key="form.name"
-                           placeholder="Imię i nazwisko" required>
+                           placeholder="Imię i nazwisko" autocomplete="name" required>
                 </div>
 
                 <div class="form-group">
                     <input type="email" name="email" class="form-control" data-key="form.email"
-                           placeholder="Email" required>
+                           placeholder="Email" autocomplete="email" required>
                 </div>
 
                 <div class="form-group">

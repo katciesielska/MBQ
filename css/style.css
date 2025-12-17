@@ -1003,6 +1003,14 @@ div.dark_square .pp_content,
 }
 
 @media (max-width: 768px) {
+    .headerLine {
+        height: 500px;
+    }
+    
+    #camera_wrap_1 {
+        margin-top: 0;
+    }
+    
     #contact-bubble {
         width: 55px;
         height: 55px;

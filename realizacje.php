@@ -210,6 +210,20 @@ document.addEventListener("DOMContentLoaded", function() {
       btn.classList.add("active");
       activeFilter = btn.dataset.filter;
       shownCount = 9;
+      
+      // Update URL parameter
+      try {
+        const url = new URL(window.location);
+        if (activeFilter === 'all') {
+          url.searchParams.delete('kategoria');
+        } else {
+          url.searchParams.set('kategoria', activeFilter);
+        }
+        window.history.pushState({}, '', url);
+      } catch(e) {
+        console.log('URL update failed:', e);
+      }
+      
       renderGallery(shownCount);
     });
   });
@@ -238,7 +252,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Language change handler
   window.onGlobalLangChange = function(lang) {
-    if (typeof applyLang === "function") applyLang(lang);
+    // Language translations handled by index.php
   };
 
   // Hide bubble during preview
