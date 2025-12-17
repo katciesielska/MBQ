@@ -19,8 +19,9 @@
 
 <body>
 <!-- CONTACT BUBBLE (clean, fixed, delayed) -->
-<div id="contact-bubble" data-key="bubble.text">
-    Zainteresowana/y? Skontaktuj się z nami!
+<div id="contact-bubble">
+    <span class="bubble-text" data-key="bubble.text">Zainteresowana/y? Skontaktuj się z nami!</span>
+    <i class="fa fa-phone bubble-icon"></i>
 </div>
 
 <script>
