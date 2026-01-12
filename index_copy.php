@@ -174,7 +174,7 @@
         </p>
 </div>
         
-        <!-- Usługi -->
+        <!-- Features -->
         <div class="row about-features">
             <div class="col-md-4 col-sm-4">
                 <div class="about-feature-box">
@@ -231,7 +231,7 @@
             <ul id="quote-summary-list" style="list-style:none; padding-left:0;"></ul>
         </div>
 
-        
+        <!-- Contact Form -->
         <!-- Contact Form -->
         <div class="contact-form-simple">
             <h3 class="form-title" data-key="contact.form.title">Napisz do nas</h3>
@@ -360,7 +360,7 @@ jQuery(function () {
     // zamykanie przyciskiem X
     sideClose.addEventListener('click', closeSide);
 
-    // zamykanie klawiszem ESC
+    // zamykanie klawiszem ESC (bonus, bardzo UX)
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
             closeSide();
@@ -389,9 +389,14 @@ jQuery(function () {
             }
         });
     });
+
+    // ESC closes menu
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeSide();
+    });
 })();
 
-/* Poprawne przewijanie do sekcji z uwzględnieniem wysokości górnego menu */
+/* SCROLL OFFSET for anchor links */
 (function () {
     const headerHeight = () => document.getElementById('menuF').offsetHeight || 70;
 
@@ -414,7 +419,7 @@ jQuery(function () {
     });
 })();
 
-
+/* SERVICES → trigger project filter */
 (function() {
     function emitProjectFilter(folder) {
         // Dispatch event for realizacje.php to listen
@@ -429,7 +434,7 @@ jQuery(function () {
             window.history.replaceState({}, '', url);
         } catch (e) {}
 
-        
+        // Scroll to projects section
         const headerEl = document.getElementById('menuF');
         const headerH = headerEl ? headerEl.offsetHeight : 70;
         const target = document.getElementById('project');
@@ -448,10 +453,10 @@ jQuery(function () {
     document.addEventListener('DOMContentLoaded', function () {
         document.querySelectorAll('.service-box[data-folder]').forEach(el => {
 
-            
+            // CLICK
             el.addEventListener('click', function (e) {
 
-                
+                // 👉 OPCJA A: kalkulator ma priorytet
                 const calculators = document.getElementById('service-calculators');
                 if (calculators && calculators.style.display === 'block') {
                     return;
@@ -838,7 +843,7 @@ const translations = {
 window.currentLang = 'pl';
 
 /* ===============================
-   Mechanizm dynamicznych tłumaczen
+   APPLY TRANSLATIONS
 =============================== */
 function applyLang(lang) {
     window.currentLang = lang;
@@ -868,10 +873,15 @@ function applyLang(lang) {
 
 
 /* ===============================
-   Inicjalizacja języka strony
+   INIT
 =============================== */
 document.addEventListener('DOMContentLoaded', () => {
     applyLang('pl');
+
+    setTimeout(() => {
+        const bubble = document.getElementById('contact-bubble');
+        if (bubble) bubble.style.display = 'block';
+    }, 5000);
 });
 
 
@@ -888,7 +898,19 @@ document.getElementById('lang-switch')?.addEventListener('click', () => {
 });
 
 
+/* ===============================
+   PrettyPhoto bubble handling
+=============================== */
+$(document).on('click', "a[rel^='prettyPhoto']", () => {
+    $('#contact-bubble').hide();
+});
 
+document.addEventListener('pp_closed', () => {
+    setTimeout(() => {
+        const bubble = document.getElementById('contact-bubble');
+        if (bubble) bubble.style.display = 'block';
+    }, 6000);
+});
 </script>
 <script src="js/calculator.js"></script>
 </body>

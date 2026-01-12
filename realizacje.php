@@ -1,25 +1,45 @@
 <?php
-// realizacje.php — gallery with filtering, translations, random order and "show more"
+// realizacje.php
+// Plik odpowiedzialny za dynamiczną galerię realizacji:
+// - automatyczne wczytywanie zdjęć z katalogów
+// - filtrowanie po kategoriach
+// - losową kolejność
+// - obsługę wielojęzyczności
+// - przycisk „więcej”
 
-$base_dir = __DIR__ . '/images/realizacje';
-$base_url = 'images/realizacje';
+$base_dir = __DIR__ . '/images/realizacje'; // katalog z realizacjami na serwer
+$base_url = 'images/realizacje'; // ścieżka publiczna do zdjęć
 $categories = [];
 
-// Scan folders
+/* ===============================
+   SKANOWANIE KATALOGÓW REALIZACJI
+   ===============================
+   Każdy podfolder traktowany jest
+   jako osobna kategoria realizacji.
+*/
 if (is_dir($base_dir)) {
     foreach (scandir($base_dir) as $d) {
         if ($d === '.' || $d === '..') continue;
         if (is_dir("$base_dir/$d")) {
+
+          // generowanie bezpiecznego identyfikatora (slug)
             $slug = 'cat-' . preg_replace('/[^a-z0-9_-]/', '-', strtolower($d));
             $categories[$slug] = $d;
         }
     }
 }
 
-// Build image list
+/* ===============================
+   BUDOWANIE LISTY ZDJĘĆ
+   ===============================
+   Pobieranie wszystkich plików graficznych
+   z wykrytych kategorii.
+*/
 $images = [];
 foreach ($categories as $slug => $folder) {
     $dir = "$base_dir/$folder";
+
+    // filtrowanie tylko plików graficznych
     $files = array_values(array_filter(scandir($dir), fn($f) =>
         preg_match('/\.(jpg|jpeg|png|gif)$/i', $f)
     ));
@@ -31,11 +51,18 @@ foreach ($categories as $slug => $folder) {
         ];
     }
 }
-
+// konwersja danych do formatu JSON (przekazanie do JavaScript)
 $images_json = json_encode($images);
 $categories_json = json_encode($categories);
 
-// Category name mapping for PL/EN translations
+/* ===============================
+   MAPOWANIE NAZW KATEGORII
+   ===============================
+   Powiązanie nazw folderów z:
+   - nazwą PL
+   - nazwą EN
+   - kluczem tłumaczeń
+*/
 $name_map = [
     'domy_szkieletowe' => [
         'pl' => 'Domy szkieletowe',
@@ -70,13 +97,14 @@ $name_map = [
 ];
 ?>
 
-<!-- GALLERY SECTION -->
+<!-- SEKCJA REALIZACJI -->
 <div id="project">
   <div class="container text-center">
 
     <h3 data-key="projects.title">Nasze realizacje</h3>
     <p data-key="projects.subtitle">Wybierz kategorię aby filtrować</p>
 
+    <!-- przyciski filtrowania -->
     <div class="filters">
       <button class="filter-btn active" data-filter="all" data-key="filter.all">Wszystkie</button>
 
@@ -96,10 +124,12 @@ $name_map = [
         </button>
       <?php endforeach; ?>
     </div>
-
+        <!-- Kontener na siatkę galerii -->
     <div class="row gallery-grid" id="gallery-container"></div>
 
     <div style="text-align: center; margin-top: 30px;">
+
+      <!-- Przycisk „więcej” do pokazania większej ilości zdjęć-->
       <button id="load-more" style="display:none;" data-key="projects.more">
         Więcej
       </button>
@@ -109,9 +139,12 @@ $name_map = [
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
+  
+  // dane przekazane z PHP
   const allImages = <?= $images_json ?>;
   const categories = <?= $categories_json ?>;
 
+  // losowanie kolejności zdjęć
   function shuffle(a) { 
     for (let i = a.length - 1; i > 0; i--) { 
       const j = Math.floor(Math.random() * (i + 1)); 
@@ -121,9 +154,12 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   const randomized = shuffle(allImages.slice());
+
+  // aktualny filtr i liczba wyświetlanych elementów
   let activeFilter = "all";
   let shownCount = (window.innerWidth < 992) ? 6 : 9;
 
+  // RESPONSYWANE ILOŚĆ ELEMENTÓW
   window.addEventListener("resize", function() {
     const newCount = (window.innerWidth < 992) ? 6 : 9;
     if (newCount !== shownCount) {
@@ -148,6 +184,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
 
+  // renderowanie galerii
   function renderGallery(count) {
     gallery.innerHTML = "";
 
@@ -166,7 +203,7 @@ document.addEventListener("DOMContentLoaded", function() {
     loadMoreBtn.style.display = source.length > count ? "inline-block" : "none";
   }
 
-  // Find slug by folder name
+  // znajdowanie identyfikatora fltra na podstawie nazwy folderu
   function slugForFolder(folder) {
     for (const s in categories) {
       if (categories[s] === folder) return s;
@@ -175,7 +212,7 @@ document.addEventListener("DOMContentLoaded", function() {
     return (guess in categories) ? guess : null;
   }
 
-  // Set active filter programmatically
+  
   function applyFilterBy(folderOrSlug) {
     let targetSlug = null;
     if (!folderOrSlug) {
@@ -197,21 +234,23 @@ document.addEventListener("DOMContentLoaded", function() {
     renderGallery(shownCount);
   }
 
-  // Expose for global use
+  // Udostępnienie funkcji filtrowania globalnie
   window.setProjectFilter = applyFilterBy;
 
-  // Initial render
+  // Pierwsze wyświetlenie galerii
   renderGallery(shownCount);
 
-  // Filter button actions
+  // obsługa przycisków filtrowania
   filterButtons().forEach(btn => {
     btn.addEventListener("click", () => {
+
+      // aktualizacja aktywnego przycisku
       filterButtons().forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
       activeFilter = btn.dataset.filter;
       shownCount = 9;
       
-      // Update URL parameter
+      // aktualizacja parametru URL (bez przeładowania strony)
       try {
         const url = new URL(window.location);
         if (activeFilter === 'all') {
@@ -228,14 +267,14 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
 
-  // Listen for cross-page/service clicks
+
   document.addEventListener('projectFilterRequested', function(e) {
     const folder = e && e.detail && e.detail.folder;
     if (!folder) return;
     applyFilterBy(folder);
   });
 
-  // Apply URL parameter if present
+  
   try {
     const params = new URLSearchParams(window.location.search);
     const k = params.get('kategoria');
@@ -244,18 +283,10 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   } catch(e) {}
 
-  // Load more button
+ 
   loadMoreBtn.addEventListener("click", () => {
     shownCount += 9;
     renderGallery(shownCount);
   });
-
-  // Language change handler
-  window.onGlobalLangChange = function(lang) {
-    // Language translations handled by index.php
-  };
-
-  // Hide bubble during preview
-  $(document).on("click", "a[rel^='prettyPhoto']", () => $('#contact-bubble').hide());
 });
 </script>
