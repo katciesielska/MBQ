@@ -533,7 +533,7 @@ body {
     padding: 30px 20px 50px;
     border-radius: 0;
     box-shadow: none;
-    border-top: 2px solid #2a8dd8;
+    border: none;
 }
 
 .contact-form-simple .form-title {
@@ -542,6 +542,27 @@ body {
     color: #2a3b4c;
     margin-bottom: 30px;
     text-align: center;
+}
+
+.contact-form-simple .calculator-title {
+    font-size: 24px;
+    font-weight: 500;
+    color: #2a3b4c;
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+
+.contact-form-simple label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #2a3b4c;
+    margin-bottom: 8px;
+    margin-top: 18px;
+}
+
+.contact-form-simple label:first-of-type {
+    margin-top: 0;
 }
 
 #contactForm {
@@ -555,16 +576,18 @@ body {
 
 #contactForm .form-control {
     width: 100%;
-    padding: 15px;
+    padding: 12px;
     font-size: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    transition: border-color 0.3s ease;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background: #fff;
 }
 
 #contactForm .form-control:focus {
     outline: none;
     border-color: #2a8dd8;
+    box-shadow: 0 0 0 2px rgba(42, 141, 216, 0.08);
 }
 
 #contactForm textarea.form-control {
@@ -579,13 +602,21 @@ body {
     color: #fff;
     background: #2a8dd8;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 20px;
 }
 
 .btn-contact-submit:hover {
     background: #1a6fb8;
+    box-shadow: 0 2px 8px rgba(42, 141, 216, 0.25);
+}
+
+.btn-contact-submit:active {
+    transform: scale(0.98);
 }
 
 /* Responsive */
@@ -1102,10 +1133,87 @@ div.dark_square .pp_content,
 }
 
 .calculator-title {
-    font-size: 32px;
+    font-size: 24px;
+    font-weight: 500;
+    margin: 0 0 20px 0;
+    color: #2a3b4c;
+    text-transform: none;
+}
+
+/* Calculator Styling */
+.calculator-container {
+    background: #f9f9f9;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-left: 4px solid #2a8dd8;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.calculator-container h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #2a3b4c;
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+
+.calculator-field {
+    margin-bottom: 18px;
+}
+
+.calculator-field label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #2a3b4c;
+    margin-bottom: 8px;
+}
+
+.calculator-field input,
+.calculator-field select,
+.calculator-field textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    font-family: 'Roboto', sans-serif;
+}
+
+.calculator-field input:focus,
+.calculator-field select:focus,
+.calculator-field textarea:focus {
+    outline: none;
+    border-color: #2a8dd8;
+    box-shadow: 0 0 0 3px rgba(42, 141, 216, 0.1);
+}
+
+.calculator-submit {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
     font-weight: 700;
-    margin: 40px 0 25px;
-    color: #0a0a0a;
+    color: #fff;
+    background: #2a8dd8;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.calculator-submit:hover {
+    background: #1a6fb8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(42, 141, 216, 0.3);
+}
+
+.calculator-submit:active {
+    transform: translateY(0);
 }
 
 /* === DEBUG MENU VISIBILITY === */
