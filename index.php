@@ -20,6 +20,9 @@
 
 <body>
 
+<!-- BACK TO TOP BUTTON -->
+<button id="backToTop" aria-label="Wróć na górę"></button>
+
 <div id="home">
     <div class="headerLine">
 
@@ -387,6 +390,28 @@ jQuery(function () {
                 const top = target.getBoundingClientRect().top + window.pageYOffset - headerH - 8;
                 window.scrollTo({ top: top, behavior: 'smooth' });
             }
+        });
+    });
+})();
+
+/* BACK TO TOP BUTTON */
+(function() {
+    const backToTopButton = document.getElementById('backToTop');
+    const upArrow = '↑';
+    backToTopButton.innerHTML = upArrow;
+
+    window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+            backToTopButton.classList.add('show');
+        } else {
+            backToTopButton.classList.remove('show');
+        }
+    });
+
+    backToTopButton.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
         });
     });
 })();
