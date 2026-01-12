@@ -157,7 +157,7 @@
         <h3 class="calculator-title" data-key="pricing.title">
             Cennik
         </h3>
-        <p data-key="pricing.info.secondary"></p>
+        <p class="section-subtitle" data-key="pricing.info.secondary"></p>
     </div>
 
     <div class="container">
@@ -497,10 +497,10 @@ const translations = {
         "pricing.summary.title": "Wybrane wyceny",
 
         "pricing.info.main": "Tutaj możesz uzyskać orientacyjny zakres cenowy usługi dopasowany do Twoich potrzeb.",
-        "pricing.info.secondary": "Możesz uzupełnić jeden lub kilka kalkulatorów. Po wysłaniu formularza kontaktowego poniżej, otrzymasz zakres cenowy drogą mailową.",
+        "pricing.info.secondary": "Wybierz jedną lub więcej usług, wypełnij kalkulator i otrzymaj wycenę mailowo!",
 
 
-        "pricing.title": "Cennik",
+        "pricing.title": "Co możemy dla Ciebie wykonać?",
         "pricing.subtitle": "Wybierz elementy, aby sprawdzić orientacyjny zakres cenowy.",
 
         "pricing.houses.type": "Typ domu",
@@ -699,10 +699,10 @@ const translations = {
         "pricing.summary.title": "Selected estimates",
 
         "pricing.info.main": "Here, you can get an estimated price range tailored to your needs.",
-        "pricing.info.secondary": "You can fill in one or more calculators. After submitting the contact form below, you will receive a price range by email.",
+        "pricing.info.secondary": "Choose one or more services, fill out the calculator, and receive a quote by email!",
 
 
-        "pricing.title": "Pricing",
+        "pricing.title": "What can we do for you?",
         "pricing.subtitle": "Select elements to get an estimated price range.",
         "pricing.submit": "Get a quote",
         "pricing.notes": "Notes",

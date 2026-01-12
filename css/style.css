@@ -482,6 +482,15 @@ body {
     line-height: 1.6;
 }
 
+/* Generic section subtitle styling for consistency */
+.section-subtitle {
+    font-size: 18px;
+    font-weight: 400;
+    color: #6b7280;
+    letter-spacing: 0.3px;
+    line-height: 1.6;
+}
+
 /* Simple Contact Info */
 .contact-phone-cta {
     text-align: center;
