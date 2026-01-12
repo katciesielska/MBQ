@@ -304,9 +304,29 @@ body {
     text-underline-offset: 8px;
 }
 
+@media (max-width: 767px) {
+    .camera_caption h2 {
+        font-size: 40px;
+        letter-spacing: -1px;
+        text-decoration-thickness: 2px;
+    }
+}
+
+@media (max-width: 480px) {
+    .camera_caption h2 {
+        font-size: 32px;
+    }
+}
+
 /* ---------- SERVICES GRID (responsive) ---------- */
 .section {
     padding: 50px 0;
+}
+
+@media (max-width: 767px) {
+    .section {
+        padding: 35px 0;
+    }
 }
 
 #about .container {
@@ -349,8 +369,34 @@ body {
 @media (max-width: 992px) {
     .service-box { width: 45%; }
 }
+@media (max-width: 767px) {
+    .service-box {
+        width: 48%;
+        min-width: 140px;
+    }
+    
+    .service-box i {
+        font-size: 32px;
+    }
+    
+    .service-box h4 {
+        font-size: 14px;
+    }
+}
+
 @media (max-width: 480px) {
-    .service-box { width: 100%; }
+    .service-box {
+        width: 100%;
+        padding: 20px 12px;
+    }
+    
+    .service-box i {
+        font-size: 40px;
+    }
+    
+    .service-box h4 {
+        font-size: 16px;
+    }
 }
 
 /* ---------- GALLERY (realizacje) ---------- */
@@ -1196,6 +1242,13 @@ div.dark_square .pp_content,
     margin: 0 0 20px 0;
     color: #2a3b4c;
     text-transform: none;
+}
+
+@media (max-width: 767px) {
+    .calculator-title {
+        font-size: 22px;
+        margin: 0 0 16px 0;
+    }
 }
 
 /* === BACK TO TOP BUTTON === */
