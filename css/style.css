@@ -222,6 +222,13 @@ body {
     box-sizing: border-box;
     overflow-y: auto;
 }
+
+@media (min-width: 992px) {
+    #sideMenu {
+        display: none !important; /* Hide side menu on desktop */
+    }
+}
+
 #sideMenu.open { right: 0; }
 #sideMenu #sideClose {
     background: transparent;
@@ -265,6 +272,12 @@ body {
     transition: opacity .2s ease;
 }
 #sideMenuOverlay.visible { display:block; opacity: 1; }
+
+@media (min-width: 992px) {
+    #sideMenuOverlay {
+        display: none !important; /* Hide overlay on desktop */
+    }
+}
 
 /* Hide old #menu and slicknav to avoid duplicates */
 #menu { display: none !important; }
@@ -1096,8 +1109,20 @@ div.dark_square .pp_content,
     background: #0000;
 }
 
-#lang-switch {
-    margin-right: 52px;
+@media (min-width: 992px) {
+    #hamburger {
+        display: none !important;
+    }
+    
+    #lang-switch {
+        margin-right: 0; /* Remove extra margin on desktop since hamburger is hidden */
+    }
+}
+
+@media (max-width: 991px) {
+    #lang-switch {
+        margin-right: 52px; /* Keep margin on mobile for hamburger */
+    }
 }
 
 /* ===== PRICING INFO (opis pod kalkulatorami) ===== */
