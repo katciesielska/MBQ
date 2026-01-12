@@ -41,9 +41,9 @@
                         <nav class="desktop-menu">
                             <ul>
                                 <li><a href="#home" data-key="nav.home">Home</a></li>
-                                <li><a href="#about" data-key="nav.pricing">Cennik</a></li>
-                                <li><a href="#project" data-key="nav.projects">Realizacje</a></li>
                                 <li><a href="#aboutus" data-key="nav.about">O nas</a></li>
+                                <li><a href="#project" data-key="nav.projects">Realizacje</a></li>
+                                <li><a href="#about" data-key="nav.pricing">Cennik</a></li>
                                 <li><a href="#contact" data-key="nav.contact">Kontakt</a></li>
                             </ul>
                         </nav>
@@ -66,9 +66,9 @@
             <button id="sideClose" aria-label="Zamknij menu">&times;</button>
             <ul>
                 <li><a href="#home" data-key="nav.home">Home</a></li>
-                <li><a href="#about" data-key="nav.pricing">Cennik</a></li>
-                <li><a href="#project" data-key="nav.projects">Realizacje</a></li>
                 <li><a href="#aboutus" data-key="nav.about">O nas</a></li>
+                <li><a href="#project" data-key="nav.projects">Realizacje</a></li>
+                <li><a href="#about" data-key="nav.pricing">Cennik</a></li>
                 <li><a href="#contact" data-key="nav.contact">Kontakt</a></li>
             </ul>
         </nav>
@@ -101,6 +101,54 @@
 
     </div>
 </div>
+
+<!-- O NAS -->
+<div id="aboutus" class="section aboutus-section">
+    <div class="container">
+        <div class="aboutus-content">
+            <h2 class="section-title" data-key="aboutus.title">MBQ jest firmą, której szukałeś!</h2>
+           <p class="aboutus-description" data-key="aboutus.description">
+            Jesteśmy firmą realizującą projekty z zakresu budownictwa, konstrukcji drewnianych
+            oraz rozwiązań indywidualnych. Oferujemy wsparcie na różnych etapach realizacji —
+            od koncepcji i projektowania, po wykonanie wybranych elementów.
+        </p>
+</div>
+        
+        <!-- Usługi -->
+        <div class="row about-features">
+            <div class="col-md-4 col-sm-4">
+                <div class="about-feature-box">
+                    <div class="feature-icon">
+                        <i class="fa fa-check-circle"></i>
+                    </div>
+                    <h4 data-key="aboutus.feature1.title">Jakość i Precyzja</h4>
+                    <p data-key="aboutus.feature1.desc">Każdy projekt wykonujemy z najwyższą starannością i dbałością o detale.</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4">
+                <div class="about-feature-box">
+                    <div class="feature-icon">
+                        <i class="fa fa-clock-o"></i>
+                    </div>
+                    <h4 data-key="aboutus.feature2.title">Terminowość</h4>
+                    <p data-key="aboutus.feature2.desc">Dotrzymujemy ustalonych terminów i harmonogramów prac.</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4">
+                <div class="about-feature-box">
+                    <div class="feature-icon">
+                        <i class="fa fa-users"></i>
+                    </div>
+                    <h4 data-key="aboutus.feature3.title">Doświadczony Zespół</h4>
+                    <p data-key="aboutus.feature3.desc">Nasz zespół to wykwalifikowani specjaliści z wieloletnim doświadczeniem.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- REALIZACJE -->
+<?php include 'realizacje.php'; ?>
 
 <!-- CENNIK -->
 <div id="about" class="section">
@@ -158,54 +206,6 @@
     </div> <!-- /.container -->
 
 </div> <!-- /#about -->
-
-<!-- REALIZACJE -->
-<?php include 'realizacje.php'; ?>
-
-<!-- O NAS -->
-<div id="aboutus" class="section aboutus-section">
-    <div class="container">
-        <div class="aboutus-content">
-            <h2 class="section-title" data-key="aboutus.title">MBQ jest firmą, której szukałeś!</h2>
-           <p class="aboutus-description" data-key="aboutus.description">
-            Jesteśmy firmą realizującą projekty z zakresu budownictwa, konstrukcji drewnianych
-            oraz rozwiązań indywidualnych. Oferujemy wsparcie na różnych etapach realizacji —
-            od koncepcji i projektowania, po wykonanie wybranych elementów.
-        </p>
-</div>
-        
-        <!-- Usługi -->
-        <div class="row about-features">
-            <div class="col-md-4 col-sm-4">
-                <div class="about-feature-box">
-                    <div class="feature-icon">
-                        <i class="fa fa-check-circle"></i>
-                    </div>
-                    <h4 data-key="aboutus.feature1.title">Jakość i Precyzja</h4>
-                    <p data-key="aboutus.feature1.desc">Każdy projekt wykonujemy z najwyższą starannością i dbałością o detale.</p>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-4">
-                <div class="about-feature-box">
-                    <div class="feature-icon">
-                        <i class="fa fa-clock-o"></i>
-                    </div>
-                    <h4 data-key="aboutus.feature2.title">Terminowość</h4>
-                    <p data-key="aboutus.feature2.desc">Dotrzymujemy ustalonych terminów i harmonogramów prac.</p>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-4">
-                <div class="about-feature-box">
-                    <div class="feature-icon">
-                        <i class="fa fa-users"></i>
-                    </div>
-                    <h4 data-key="aboutus.feature3.title">Doświadczony Zespół</h4>
-                    <p data-key="aboutus.feature3.desc">Nasz zespół to wykwalifikowani specjaliści z wieloletnim doświadczeniem.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
 <!-- KONTAKT -->
 <div id="contact" class="section contact-section">
@@ -280,9 +280,9 @@
                     <h3 data-key="footer.links">Linki</h3>
                     <ul class="footer-links">
                         <li><a href="#home" data-key="nav.home">Home</a></li>
-                        <li><a href="#about" data-key="nav.pricing">Cennik</a></li>
-                        <li><a href="#project" data-key="nav.projects">Realizacje</a></li>
                         <li><a href="#aboutus" data-key="nav.about">O nas</a></li>
+                        <li><a href="#project" data-key="nav.projects">Realizacje</a></li>
+                        <li><a href="#about" data-key="nav.pricing">Cennik</a></li>
                         <li><a href="#contact" data-key="nav.contact">Kontakt</a></li>
                     </ul>
                 </div>
