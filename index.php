@@ -295,7 +295,7 @@
                     <ul class="footer-contact">
                         <li><i class="fa fa-envelope"></i> <a href="mailto:mbq.kontakt@gmail.com">mbq.kontakt@gmail.com</a></li>
                         <li><i class="fa fa-phone"></i> <a href="tel:+48515091300" data-key="footer.phone">+48 515 091 300</a></li>
-                        <li><i class="fa fa-map-marker"></i> <span data-key="footer.location">Polska</span></li>
+                        <li><i class="fa fa-map-marker"></i> <span data-key="footer.location">Poznań, Polska</span></li>
                         <li><i class="fa fa-clock-o"></i> <span data-key="footer.hours">Pn-Pt: 8:00 - 18:00</span></li>
                     </ul>
                 </div>
@@ -628,7 +628,7 @@ const translations = {
         "footer.links": "Linki",
         "footer.contact": "Kontakt",
         "footer.phone": "+48 515 091 300",
-        "footer.location": "Polska",
+        "footer.location": "Poznań, Polska",
         "footer.hours": "Pn-Pt: 8:00 - 18:00",
 
         "common.edit": "Edytuj",
