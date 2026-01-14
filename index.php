@@ -101,10 +101,11 @@
 
             </div>
             
-            <!-- Hero CTA Button -->
-            <div class="hero-cta">
-                <a href="#project" class="btn-hero-cta" data-key="hero.cta">Zobacz nasze realizacje</a>
-            </div>
+        </div>
+        
+        <!-- Hero CTA Button -->
+        <div class="hero-cta">
+            <a href="#project" class="btn-hero-cta" data-key="hero.cta">Zobacz nasze realizacje</a>
         </div>
 
     </div>

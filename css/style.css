@@ -353,21 +353,55 @@ body {
 
 @media (max-width: 992px) {
     .hero-cta {
-        right: 30px;
-        bottom: 60px;
+        right: 25px;
+        bottom: 50px;
+    }
+    
+    .btn-hero-cta {
+        padding: 12px 28px;
+        font-size: 15px;
     }
 }
 
 @media (max-width: 767px) {
     .hero-cta {
-        position: static;
+        position: relative;
         text-align: center;
-        margin-top: 25px;
+        margin: 0;
+        padding: 40px 20px 45px;
+        background: transparent;
     }
     
     .btn-hero-cta {
-        padding: 12px 28px;
+        padding: 18px 36px;
+        font-size: 16px;
+        display: inline-block;
+        width: auto;
+        min-width: 280px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-cta {
+        padding: 25px 15px 30px;
+    }
+    
+    .btn-hero-cta {
+        padding: 15px 28px;
         font-size: 14px;
+        min-width: 240px;
+    }
+}
+
+@media (max-width: 390px) {
+    .hero-cta {
+        padding: 18px 12px 22px;
+    }
+    
+    .btn-hero-cta {
+        padding: 12px 22px;
+        font-size: 13px;
+        min-width: 220px;
     }
 }
 
@@ -1199,11 +1233,14 @@ div.dark_square .pp_content,
 
 @media (max-width: 767px) {
     .headerLine {
-        height: 500px;
+        height: 650px;
+        background-size: cover;
+        background-position: center center;
     }
     
     #camera_wrap_1 {
         margin-top: 0;
+        min-height: 450px;
     }
 
     /* Mobile optimization: Ensure form inputs are large enough */
