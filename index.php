@@ -100,6 +100,11 @@
                 </div>
 
             </div>
+            
+            <!-- Hero CTA Button -->
+            <div class="hero-cta">
+                <a href="#project" class="btn-hero-cta" data-key="hero.cta">Zobacz nasze realizacje</a>
+            </div>
         </div>
 
     </div>
@@ -518,6 +523,7 @@ const translations = {
         "slide.one": "Budowa?",
         "slide.two": "Remont?",
         "slide.three": "Nie ma problemu.",
+        "hero.cta": "Zobacz nasze realizacje",
 
         "pricing.summary.title": "Wybrane wyceny",
 
@@ -720,6 +726,7 @@ const translations = {
         "slide.one": "Construction?",
         "slide.two": "Renovation?",
         "slide.three": "No problem.",
+        "hero.cta": "See our projects",
 
         "pricing.summary.title": "Selected estimates",
 
