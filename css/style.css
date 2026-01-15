@@ -380,14 +380,36 @@ body {
 }
 
 @media (min-width: 1920px) {
+    .headerLine {
+        position: relative;
+    }
+    
+    .headerLine .container-fluid {
+        max-width: 1400px;
+        margin: 0 auto;
+        position: relative;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
     .hero-cta {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
         right: auto;
-        left: 12%;
-        bottom: 35%;
+        bottom: 28%;
+    }
+    
+    .camera_caption {
+        bottom: 50% !important;
+        left: 15px !important;
+        right: auto !important;
+        text-align: left;
     }
     
     .camera_caption h2 {
         font-size: 95px;
+        margin-bottom: 40px;
     }
     
     body {
@@ -1123,6 +1145,13 @@ div.dark_square .pp_content,
 /* ---------- HEADER NAVIGATION ---------- */
 #menuF .container {
     width: 100%;
+}
+
+@media (min-width: 1920px) {
+    #menuF .container {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
 }
 
 #menuF .row {
