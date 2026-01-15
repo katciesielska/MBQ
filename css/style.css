@@ -136,16 +136,6 @@ body {
         padding: 0;
         align-items: center;
     }
-}
-
-@media (min-width: 1920px) {
-    .desktop-menu ul {
-        gap: 40px;
-    }
-    
-    .desktop-menu ul li a {
-        font-size: 15px;
-    }
     
     .desktop-menu ul li {
         margin: 0;
@@ -182,6 +172,16 @@ body {
     
     .desktop-menu ul li a:hover::after {
         width: 100%;
+    }
+}
+
+@media (min-width: 1920px) {
+    .desktop-menu ul {
+        gap: 40px;
+    }
+    
+    .desktop-menu ul li a {
+        font-size: 15px;
     }
 }
 
