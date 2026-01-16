@@ -694,7 +694,7 @@ body {
 }
 
 .contact-header .section-subtitle {
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 400;
     color: #6b7280;
     letter-spacing: 0.3px;
@@ -703,7 +703,7 @@ body {
 
 /* Generic section subtitle styling for consistency */
 .section-subtitle {
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 400;
     color: #6b7280;
     letter-spacing: 0.3px;
@@ -1225,7 +1225,7 @@ div.dark_square .pp_content,
     
     .section-subtitle,
     .contact-header .section-subtitle {
-        font-size: 20px;
+        font-size: 18px;
     }
     
     .aboutus-description {
