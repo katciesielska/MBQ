@@ -3,7 +3,25 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MBQ Michał Blandzi</title>
+    <title>MBQ Michał Blandzi - Domy Szkieletowe, Tarasy, Elewacje | Poznań</title>
+    <meta name="description" content="Profesjonalna budowa domów szkieletowych, tarasów, elewacji, ogrodzeń i saun w Poznaniu. Oferujemy kompleksowe usługi budowlane i projekty 3D.">
+    <meta name="keywords" content="domy szkieletowe, tarasy, elewacje, ogrodzenia, sauny, projekty 3D, budownictwo, Poznań, MBQ">
+    <meta name="author" content="MBQ Michał Blandzi">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="MBQ Michał Blandzi - Domy Szkieletowe, Tarasy, Elewacje">
+    <meta property="og:description" content="Profesjonalna budowa domów szkieletowych, tarasów, elewacji, ogrodzeń i saun w Poznaniu.">
+    <meta property="og:image" content="images/logo.png">
+    <meta property="og:locale" content="pl_PL">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MBQ Michał Blandzi - Domy Szkieletowe, Tarasy, Elewacje">
+    <meta name="twitter:description" content="Profesjonalna budowa domów szkieletowych, tarasów, elewacji, ogrodzeń i saun w Poznaniu.">
+    
+    <link rel="icon" type="image/png" href="images/logo.png">
 
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/font-awesome.css">
@@ -15,6 +33,30 @@
 
     <script src="js/jquery-1.8.3.min.js"></script>
     
+    <!-- Structured Data for Local Business -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "MBQ Michał Blandzi",
+      "description": "Profesjonalna budowa domów szkieletowych, tarasów, elewacji, ogrodzeń i saun",
+      "url": "https://www.mbq.pl",
+      "telephone": "+48515091300",
+      "email": "mbq.kontakt@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Poznań",
+        "addressCountry": "PL"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "08:00",
+        "closes": "18:00"
+      },
+      "priceRange": "$$"
+    }
+    </script>
 
 </head>
 
@@ -45,8 +87,8 @@
                             <ul>
                                 <li><a href="#home" data-key="nav.home">Home</a></li>
                                 <li><a href="#aboutus" data-key="nav.about">O nas</a></li>
+                                <li><a href="#services" data-key="nav.services">Usługi</a></li>
                                 <li><a href="#project" data-key="nav.projects">Realizacje</a></li>
-                                <li><a href="#about" data-key="nav.pricing">Cennik</a></li>
                                 <li><a href="#contact" data-key="nav.contact">Kontakt</a></li>
                             </ul>
                         </nav>
@@ -70,8 +112,8 @@
             <ul>
                 <li><a href="#home" data-key="nav.home">Home</a></li>
                 <li><a href="#aboutus" data-key="nav.about">O nas</a></li>
+                <li><a href="#services" data-key="nav.services">Usługi</a></li>
                 <li><a href="#project" data-key="nav.projects">Realizacje</a></li>
-                <li><a href="#about" data-key="nav.pricing">Cennik</a></li>
                 <li><a href="#contact" data-key="nav.contact">Kontakt</a></li>
             </ul>
         </nav>
@@ -156,11 +198,8 @@
     </div>
 </div>
 
-<!-- REALIZACJE -->
-<?php include 'realizacje.php'; ?>
-
-<!-- CENNIK -->
-<div id="about" class="section">
+<!-- USŁUGI / CENNIK -->
+<div id="services" class="section">
 
     <div class="container text-center">
         <h3 class="calculator-title" data-key="pricing.title">
@@ -214,7 +253,10 @@
 
     </div> <!-- /.container -->
 
-</div> <!-- /#about -->
+</div> <!-- /#services -->
+
+<!-- REALIZACJE -->
+<?php include 'realizacje.php'; ?>
 
 <!-- KONTAKT -->
 <div id="contact" class="section contact-section">
