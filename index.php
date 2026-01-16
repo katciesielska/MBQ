@@ -764,6 +764,7 @@ const translations = {
         "nav.pricing": "Pricing",
         "nav.projects": "Projects",
         "nav.about": "About us",
+        "nav.services": "Services",
         "nav.contact": "Contact",
 
         "slide.one": "Construction?",
