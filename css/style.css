@@ -526,29 +526,70 @@ body {
     width: 30%;
     min-width: 180px;
     text-align: center;
-    padding: 18px 8px;
+    padding: 30px 15px;
     box-sizing: border-box;
+    background: #fff;
+    border: 2px solid #e8e8e8;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
+
+.service-box:hover {
+    transform: translateY(-8px);
+    border-color: #2a8dd8;
+    box-shadow: 0 8px 25px rgba(42, 141, 216, 0.2);
+    background: linear-gradient(135deg, #f8fbff 0%, #ffffff 100%);
+}
+
+.service-box:focus {
+    outline: 3px solid #2a8dd8;
+    outline-offset: 2px;
+}
+
 .service-box i {
-    font-size: 36px;
-    margin-bottom: 12px;
-    color: #2b7ed0;
+    font-size: 48px;
+    margin-bottom: 16px;
+    color: #2a8dd8;
+    transition: all 0.3s ease;
 }
+
+.service-box:hover i {
+    color: #1a6fb8;
+    transform: scale(1.1);
+}
+
 .service-box h4 {
     margin: 8px 0 0;
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 16px;
+    color: #2a3b4c;
+    transition: color 0.3s ease;
+}
+
+.service-box:hover h4 {
+    color: #2a8dd8;
 }
 @media (max-width: 992px) {
-    .service-box { width: 45%; }
+    .service-box { 
+        width: 45%;
+        padding: 25px 12px;
+    }
+    
+    .service-box i {
+        font-size: 42px;
+    }
 }
 @media (max-width: 767px) {
     .service-box {
         width: 48%;
         min-width: 140px;
+        padding: 22px 10px;
     }
     
     .service-box i {
-        font-size: 32px;
+        font-size: 38px;
     }
     
     .service-box h4 {
@@ -559,15 +600,15 @@ body {
 @media (max-width: 480px) {
     .service-box {
         width: 100%;
-        padding: 20px 12px;
+        padding: 28px 20px;
     }
     
     .service-box i {
-        font-size: 40px;
+        font-size: 52px;
     }
     
     .service-box h4 {
-        font-size: 16px;
+        font-size: 17px;
     }
 }
 
